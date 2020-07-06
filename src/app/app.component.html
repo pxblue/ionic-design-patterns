@@ -4,7 +4,7 @@
     (backdropClick)="stateService.setDrawerOpen(false)"
 >
     <pxb-drawer pxb-drawer [open]="stateService.getDrawerOpen()">
-        <pxb-drawer-header title="PX Blue" subtitle="Ionic Design Patterns"></pxb-drawer-header>
+        <pxb-drawer-header title="PX Blue" subtitle="Ionic Design Patterns" (click)="goHome()" style="cursor: pointer"></pxb-drawer-header>
         <pxb-drawer-body>
             <pxb-drawer-nav-group>
                 <pxb-drawer-nav-item
@@ -25,7 +25,7 @@
             </pxb-drawer-nav-group>
         </pxb-drawer-body>
     </pxb-drawer>
-    <div pxb-content>
+    <<div style="height: 100%; width: 100%; min-height: 100vh" pxb-content>
         <router-outlet></router-outlet>
     </div>
 </pxb-drawer-layout>

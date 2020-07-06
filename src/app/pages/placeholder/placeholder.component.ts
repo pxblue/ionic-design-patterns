@@ -4,7 +4,8 @@ import { ViewportService } from '../../services/viewport.service';
 
 @Component({
     selector: 'app-placeholder',
-    template: `<div style="height: 100%; width: 100%; min-height: 100vh">
+    template: `
+      <div>
         <mat-toolbar color="primary" style="color: white">
             <button
                 *ngIf="viewportService.isSmall()"

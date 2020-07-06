@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { StateService } from './services/state.service';
 import * as PXBColors from '@pxblue/colors';
 import { DrawerLayoutVariantType } from '@pxblue/angular-components';
-import { DrawerItem, ROUTES } from './app-routing.module';
+import { DrawerItem, NAV_ITEMS } from './app-routing.module';
 import { ViewportService } from './services/viewport.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { ViewportService } from './services/viewport.service';
 })
 export class AppComponent {
     colors: Record<string, any> = PXBColors;
-    routes = ROUTES;
+    routes = NAV_ITEMS;
     selected: string;
 
     constructor(
@@ -26,6 +26,14 @@ export class AppComponent {
         if (!route.children) {
             this.router.navigate([parentRoute + route.path]);
             this.selected = route.title;
+            if (this.viewportService.isSmall()) {
+              this.stateService.setDrawerOpen(false);
+            }
         }
+    }
+
+    goHome(): void {
+      console.log('clicked');
+      this.router.navigate(['']);
     }
 }

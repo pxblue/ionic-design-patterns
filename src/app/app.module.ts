@@ -18,11 +18,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DrawerLayoutModule, DrawerModule, EmptyStateModule } from '@pxblue/angular-components';
 import { PlaceholderComponent } from './pages/placeholder/placeholder.component';
 import { DataListModule } from './pages/list/data-list/data-list.module';
+import { IonicModule } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import {HomeComponent} from "./pages/home/home.component";
 
 @NgModule({
-    declarations: [AppComponent, PlaceholderComponent],
+    declarations: [AppComponent, HomeComponent, PlaceholderComponent],
     imports: [
-        DataListModule,
+      IonicModule.forRoot(),
+      DataListModule,
         DrawerLayoutModule,
         DrawerModule,
         BrowserAnimationsModule,
@@ -43,6 +48,10 @@ import { DataListModule } from './pages/list/data-list/data-list.module';
         MatTabsModule,
         EmptyStateModule,
     ],
+  providers: [
+    StatusBar,
+    SplashScreen
+  ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

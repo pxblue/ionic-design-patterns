@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DataListComponent } from './pages/list/data-list/data-list.component';
 import { PlaceholderComponent } from './pages/placeholder/placeholder.component';
+import {HomeComponent} from "./pages/home/home.component";
 
 export type DrawerItem = {
     title: string;
@@ -11,7 +12,7 @@ export type DrawerItem = {
     redirectTo?: string;
 };
 
-export const ROUTES: DrawerItem[] = [
+export const NAV_ITEMS: DrawerItem[] = [
     {
         title: 'App Bar',
         path: 'app-bar',
@@ -114,8 +115,14 @@ export const ROUTES: DrawerItem[] = [
     },
 ];
 
+const routes = [...NAV_ITEMS, {
+  path: '**',
+  title: 'Home',
+  component: HomeComponent
+}];
+
 @NgModule({
-    imports: [RouterModule.forRoot(ROUTES)],
+    imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
 export class AppRoutingModule {}
