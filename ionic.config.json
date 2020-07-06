@@ -1,0 +1,7 @@
+{
+  "name": "ionic-design-patterns",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
