@@ -3,9 +3,10 @@ import { DataListComponent, ObjectToList, UnCamelCasePipe } from './data-list.co
 import { InfoListItemModule } from '@pxblue/angular-components';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
-    imports: [CommonModule, InfoListItemModule, MatToolbarModule],
+    imports: [CommonModule, InfoListItemModule, MatToolbarModule, MatButtonModule],
     declarations: [DataListComponent, UnCamelCasePipe, ObjectToList],
 })
 export class DataListModule {}

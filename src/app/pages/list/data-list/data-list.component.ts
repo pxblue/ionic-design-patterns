@@ -1,4 +1,6 @@
 import { Component, Pipe, PipeTransform } from '@angular/core';
+import {StateService} from "../../../services/state.service";
+import {ViewportService} from "../../../services/viewport.service";
 
 @Component({
     selector: 'app-data-list',
@@ -14,7 +16,7 @@ export class DataListComponent {
         jamesMonroe: 1812,
     };
 
-    constructor() {}
+    constructor(public readonly stateService: StateService, public readonly viewportService: ViewportService) {}
 }
 
 @Pipe({
@@ -34,6 +36,7 @@ export class ObjectToList implements PipeTransform {
     name: 'unCamelCase',
 })
 export class UnCamelCasePipe implements PipeTransform {
+
     transform(value: any, args?: any): any {
         return value
             .replace(/([a-z])([A-Z])/g, '$1 $2')

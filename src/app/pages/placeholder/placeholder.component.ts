@@ -4,8 +4,7 @@ import { ViewportService } from '../../services/viewport.service';
 
 @Component({
     selector: 'app-placeholder',
-    template: `
-      <div>
+    template: ` <div>
         <mat-toolbar color="primary" style="color: white">
             <button
                 *ngIf="viewportService.isSmall()"
@@ -21,5 +20,5 @@ import { ViewportService } from '../../services/viewport.service';
     </div>`,
 })
 export class PlaceholderComponent {
-    constructor(public readonly stateService: StateService, public viewportService: ViewportService) {}
+    constructor(public readonly stateService: StateService, public readonly viewportService: ViewportService) {}
 }

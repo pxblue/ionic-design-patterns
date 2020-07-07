@@ -1,6 +1,13 @@
-<mat-toolbar color="primary">
-    <div>Key Value List</div>
-    <div fxFlex style="margin: auto;"></div>
+<mat-toolbar color="primary" style="color: white;">
+  <button
+    *ngIf="viewportService.isSmall()"
+    mat-icon-button
+    style="margin-right: 16px;"
+    (click)="stateService.setDrawerOpen(true)"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h2>Key Value List</h2>
 </mat-toolbar>
 <mat-list>
     <pxb-info-list-item *ngFor="let item of list | keyValue" [hidePadding]="true">

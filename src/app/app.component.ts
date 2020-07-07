@@ -27,13 +27,13 @@ export class AppComponent {
             this.router.navigate([parentRoute + route.path]);
             this.selected = route.title;
             if (this.viewportService.isSmall()) {
-              this.stateService.setDrawerOpen(false);
+                this.stateService.setDrawerOpen(false);
             }
         }
     }
 
     goHome(): void {
-      console.log('clicked');
-      this.router.navigate(['']);
+        console.log('clicked');
+        this.router.navigate(['']);
     }
 }

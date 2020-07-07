@@ -21,13 +21,13 @@ import { DataListModule } from './pages/list/data-list/data-list.module';
 import { IonicModule } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import {HomeComponent} from "./pages/home/home.component";
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
     declarations: [AppComponent, HomeComponent, PlaceholderComponent],
     imports: [
-      IonicModule.forRoot(),
-      DataListModule,
+        IonicModule.forRoot(),
+        DataListModule,
         DrawerLayoutModule,
         DrawerModule,
         BrowserAnimationsModule,
@@ -48,10 +48,7 @@ import {HomeComponent} from "./pages/home/home.component";
         MatTabsModule,
         EmptyStateModule,
     ],
-  providers: [
-    StatusBar,
-    SplashScreen
-  ],
+    providers: [StatusBar, SplashScreen],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
