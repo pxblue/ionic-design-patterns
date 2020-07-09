@@ -1,11 +1,25 @@
 import { Component } from '@angular/core';
 import { StateService } from '../../services/state.service';
-import { ViewportService } from '../../services/viewport.service';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
 })
 export class HomeComponent {
-    constructor(public readonly stateService: StateService, public viewportService: ViewportService) {}
+    isSmall: boolean;
+
+    constructor(public readonly stateService: StateService, private readonly _breakpointObserver: BreakpointObserver) {}
+
+    ngOnInit(): void {
+        this._breakpointObserver
+            .observe([Breakpoints.Small, Breakpoints.Handset])
+            .subscribe((state: BreakpointState) => {
+                if (state.matches) {
+                    this.isSmall = true;
+                } else {
+                    this.isSmall = false;
+                }
+            });
+    }
 }

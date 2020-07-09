@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../services/state.service';
-import { ViewportService } from '../../services/viewport.service';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @Component({
     selector: 'app-placeholder',
     template: ` <div>
         <mat-toolbar color="primary" style="color: white">
             <button
-                *ngIf="viewportService.isSmall()"
+                *ngIf="isSmall"
                 mat-icon-button
                 style="margin-right: 16px"
-                (click)="stateService.setDrawerOpen(true)"
+                (click)="_drawerService.setDrawerOpen(true)"
             >
                 <mat-icon>menu</mat-icon>
             </button>
@@ -19,6 +19,23 @@ import { ViewportService } from '../../services/viewport.service';
         TODO
     </div>`,
 })
-export class PlaceholderComponent {
-    constructor(public readonly stateService: StateService, public readonly viewportService: ViewportService) {}
+export class PlaceholderComponent implements OnInit {
+    isSmall: boolean;
+
+    constructor(
+        private readonly _breakpointObserver: BreakpointObserver,
+        public readonly _drawerService: StateService
+    ) {}
+
+    ngOnInit(): void {
+        this._breakpointObserver
+            .observe([Breakpoints.Small, Breakpoints.Handset])
+            .subscribe((state: BreakpointState) => {
+                if (state.matches) {
+                    this.isSmall = true;
+                } else {
+                    this.isSmall = false;
+                }
+            });
+    }
 }
