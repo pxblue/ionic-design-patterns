@@ -12,20 +12,20 @@ export class AppComponent {
     selected: string;
 
     constructor(
-        private readonly router: Router,
+        private readonly _router: Router,
         private readonly _drawerService: StateService,
         private readonly _changeDetectorRef: ChangeDetectorRef
     ) {}
 
-    select(route: DrawerItem, parentRoute: string = '/'): void {
+    select(route: DrawerItem, parentRoute = '/'): void {
         if (!route.children) {
-            this.router.navigate([parentRoute + route.path]);
+            void this._router.navigate([parentRoute + route.path]);
             this.selected = route.title;
             this._drawerService.setDrawerOpen(false);
         }
     }
 
     goHome(): void {
-        this.router.navigate(['']);
+        void this._router.navigate(['']);
     }
 }
