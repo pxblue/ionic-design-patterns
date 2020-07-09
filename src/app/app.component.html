@@ -1,7 +1,7 @@
 <ion-app>
     <pxb-drawer-layout
         [width]="270"
-        [variant]="isSmall ? 'temporary' : 'permanent'"
+        variant="temporary"
         (backdropClick)="_drawerService.setDrawerOpen(false)"
     >
         <pxb-drawer pxb-drawer [open]="_drawerService.getDrawerOpen()">

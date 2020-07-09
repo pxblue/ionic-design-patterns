@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { Component } from '@angular/core';
 import { StateService } from 'src/app/services/state.service';
 
 @Component({
@@ -7,7 +6,7 @@ import { StateService } from 'src/app/services/state.service';
     templateUrl: './data-list.component.html',
     styleUrls: ['./data-list.component.scss'],
 })
-export class DataListComponent implements OnInit {
+export class DataListComponent  {
     list = [
         {
             name: 'George Washington',
@@ -30,24 +29,10 @@ export class DataListComponent implements OnInit {
             year: 1812,
         },
     ];
-    isSmall: boolean;
 
     constructor(
         private readonly _drawerService: StateService,
-        private readonly _breakpointObserver: BreakpointObserver
     ) {}
-
-    ngOnInit(): void {
-        this._breakpointObserver
-            .observe([Breakpoints.Small, Breakpoints.Handset])
-            .subscribe((state: BreakpointState) => {
-                if (state.matches) {
-                    this.isSmall = true;
-                } else {
-                    this.isSmall = false;
-                }
-            });
-    }
 
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();
