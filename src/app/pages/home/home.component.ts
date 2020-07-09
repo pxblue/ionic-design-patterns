@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {StateService} from '../../services/state.service';
-import {BreakpointObserver} from '@angular/cdk/layout';
+import { Component } from '@angular/core';
+import { StateService } from '../../services/state.service';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
     selector: 'app-home',

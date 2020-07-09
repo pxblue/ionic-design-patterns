@@ -6,7 +6,7 @@ import { StateService } from 'src/app/services/state.service';
     templateUrl: './data-list.component.html',
     styleUrls: ['./data-list.component.scss'],
 })
-export class DataListComponent  {
+export class DataListComponent {
     list = [
         {
             name: 'George Washington',
@@ -30,9 +30,7 @@ export class DataListComponent  {
         },
     ];
 
-    constructor(
-        private readonly _drawerService: StateService,
-    ) {}
+    constructor(private readonly _drawerService: StateService) {}
 
     toggleMenu(): void {
         const drawerOpen = this._drawerService.getDrawerOpen();

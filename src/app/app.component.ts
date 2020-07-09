@@ -1,7 +1,7 @@
-import {ChangeDetectorRef, Component} from '@angular/core';
-import {Router} from '@angular/router';
-import {StateService} from './services/state.service';
-import {DrawerItem, NAV_ITEMS} from './app-routing.module';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { StateService } from './services/state.service';
+import { DrawerItem, NAV_ITEMS } from './app-routing.module';
 
 @Component({
     selector: 'app-root',
