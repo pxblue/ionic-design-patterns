@@ -8,7 +8,6 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewInit {
     colors: Record<string, any> = PXBColors;
