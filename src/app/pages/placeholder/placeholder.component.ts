@@ -5,7 +5,7 @@ import { StateService } from '../../services/state.service';
     selector: 'app-placeholder',
     template: ` <div>
         <mat-toolbar color="primary" style="color: white">
-            <button mat-icon-button style="margin-right: 16px" (click)="_drawerService.setDrawerOpen(true)">
+            <button mat-icon-button style="margin-right: 16px" (click)="open()">
                 <mat-icon>menu</mat-icon>
             </button>
             <h2>Placeholder</h2>
@@ -14,5 +14,9 @@ import { StateService } from '../../services/state.service';
     </div>`,
 })
 export class PlaceholderComponent {
-    constructor(public readonly _drawerService: StateService) {}
+    constructor(private readonly _drawerService: StateService) {}
+
+    open(): void {
+        this._drawerService.setDrawerOpen(true);
+    }
 }
