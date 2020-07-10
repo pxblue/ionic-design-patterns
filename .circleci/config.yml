@@ -33,7 +33,3 @@ jobs:
           name: Build
           command: |
             yarn build
-      - run:
-          name: Test Artifacts
-          command: |
-            yarn test:artifacts
