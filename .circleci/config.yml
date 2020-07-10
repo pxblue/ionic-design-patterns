@@ -1,6 +1,7 @@
 version: 2
 jobs:
-  build_library:
+  build:
+    working_directory: ~/ionic-design-patterns
     docker:
       - image: circleci/node:12.9.1-browsers
     steps:
@@ -15,7 +16,7 @@ jobs:
       - save_cache:
           name: Save Cache
           paths:
-            - components/node_modules
+            - node_modules
           key: v2-dependencies-{{ checksum "yarn.lock" }}
       - run:
           name: Prettier Check
@@ -26,7 +27,7 @@ jobs:
           command: |
             yarn lint
       - run:
-          name: Test
+          name: Unit Tests
           command: |
             yarn test:ci
       - run:
