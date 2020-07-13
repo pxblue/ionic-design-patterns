@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/circleci/project/github/pxblue/ionic-design-patterns/master.svg?style=flat)](https://circleci.com/gh/pxblue/ionic-design-patterns/tree/master)
 
-This repository holds the source code examples for [PX Blue design patterns](https://pxblue.github.io/patterns), written in React. The code is organized to make it easy to copy and paste the examples into your own projects.
+This repository holds the source code examples for [PX Blue design patterns](https://pxblue.github.io/patterns), written in Ionic (Angular). The code is organized to make it easy to copy and paste the examples into your own projects.
 
 ## Current Patterns
 
