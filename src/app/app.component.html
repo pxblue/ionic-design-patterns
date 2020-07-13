@@ -1,10 +1,6 @@
 <ion-app>
-    <pxb-drawer-layout
-        [width]="270"
-        [variant]="viewportService.isSmall() ? 'temporary' : 'permanent'"
-        (backdropClick)="stateService.setDrawerOpen(false)"
-    >
-        <pxb-drawer pxb-drawer [open]="stateService.getDrawerOpen()">
+    <pxb-drawer-layout [width]="270" variant="temporary" (backdropClick)="_drawerService.setDrawerOpen(false)">
+        <pxb-drawer pxb-drawer [open]="_drawerService.getDrawerOpen()">
             <pxb-drawer-header
                 title="PX Blue"
                 subtitle="Ionic Design Patterns"
@@ -31,8 +27,7 @@
                 </pxb-drawer-nav-group>
             </pxb-drawer-body>
         </pxb-drawer>
-        <
-        <div style="height: 100%; width: 100%; min-height: 100vh;" pxb-content>
+        <div pxb-content class="app-content">
             <router-outlet></router-outlet>
         </div>
     </pxb-drawer-layout>
