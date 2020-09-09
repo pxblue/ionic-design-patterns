@@ -1128,10 +1128,10 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@pxblue/angular-components@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-components/-/angular-components-2.0.0.tgz#28c9bfa10ee435845eed4a031f0864fe9bbce8da"
-  integrity sha512-B1XZP0mmAzLn3pkTvao2Wt6rHgsL/kjMo9qZs9R1GYGzGYW+Y4pnl19A8lj3RPyc3qgFtgyKry9GmUOZTLrq7A==
+"@pxblue/angular-components@2.1.1-beta.1":
+  version "2.1.1-beta.1"
+  resolved "https://registry.yarnpkg.com/@pxblue/angular-components/-/angular-components-2.1.1-beta.1.tgz#fa243b1abc2bbed7cfaa5c92ea9d527dd4588a84"
+  integrity sha512-azEzy3x/TiL8uK1ESDfw4In5LgenSG50hyYs7PssCOpGRA1oN2jHOtspKyDX+jC6GRdonvC0cUUxJaquxSgX6w==
   dependencies:
     tslib "^1.9.0"
 
@@ -4829,6 +4829,11 @@ humanize-ms@^1.2.1:
   integrity sha1-xG4xWaKT9riW2ikxbYtv6Lt5u+0=
   dependencies:
     ms "^2.0.0"
+
+i@^0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/i/-/i-0.3.6.tgz#d96c92732076f072711b6b10fd7d4f65ad8ee23d"
+  integrity sha1-2WyScyB28HJxG2sQ/X1PZa2O4j0=
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24:
   version "0.4.24"
