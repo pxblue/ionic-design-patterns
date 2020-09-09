@@ -32,7 +32,7 @@
         </span>
     </pxb-info-list-item>
 </mat-list>
-<div *ngIf="data.length === 0" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+<div *ngIf="data.length === 0" class="empty-state-container">
     <pxb-empty-state title="No Items Found" style="margin: 16px;">
         <mat-icon pxb-empty-icon>error</mat-icon>
         <button data-cy="pxb-empty-state-add" pxb-actions mat-raised-button color="primary" (click)="onAddItem()">
