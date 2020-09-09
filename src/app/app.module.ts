@@ -23,6 +23,9 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { HomeComponent } from './pages/home/home.component';
 import { ActionListModule } from './pages/list/action-list/action-list.module';
+import { MultiselectListModule } from './pages/list/multiselect-list/multiselect-list.module';
+import { SortableListModule } from './pages/list/sortable-list/sortable-list.module';
+import { StatusListModule } from './pages/list/status-list/status-list.module';
 
 @NgModule({
     declarations: [AppComponent, HomeComponent, PlaceholderComponent],
@@ -49,6 +52,9 @@ import { ActionListModule } from './pages/list/action-list/action-list.module';
         MatTabsModule,
         EmptyStateModule,
         ActionListModule,
+        MultiselectListModule,
+        SortableListModule,
+        StatusListModule,
     ],
     providers: [StatusBar, SplashScreen],
     bootstrap: [AppComponent],
