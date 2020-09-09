@@ -22,6 +22,7 @@ import { IonicModule } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { HomeComponent } from './pages/home/home.component';
+import { ActionListModule } from './pages/list/action-list/action-list.module';
 
 @NgModule({
     declarations: [AppComponent, HomeComponent, PlaceholderComponent],
@@ -47,6 +48,7 @@ import { HomeComponent } from './pages/home/home.component';
         MatFormFieldModule,
         MatTabsModule,
         EmptyStateModule,
+        ActionListModule,
     ],
     providers: [StatusBar, SplashScreen],
     bootstrap: [AppComponent],
