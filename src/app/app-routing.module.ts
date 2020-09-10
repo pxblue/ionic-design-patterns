@@ -7,6 +7,7 @@ import { ActionListComponent } from './pages/list/action-list/action-list.compon
 import { MultiselectListComponent } from './pages/list/multiselect-list/multiselect-list.component';
 import { SortableListComponent } from './pages/list/sortable-list/sortable-list.component';
 import { StatusListComponent } from './pages/list/status-list/status-list.component';
+import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 
 export type DrawerItem = {
     title: string;
@@ -21,15 +22,15 @@ export const NAV_ITEMS: DrawerItem[] = [
         title: 'App Bar',
         path: 'app-bar',
         children: [
-            {
-                title: 'Collapsible',
-                path: 'collapsible',
-                component: PlaceholderComponent,
-            },
+            // {
+            //     title: 'Collapsible',
+            //     path: 'collapsible',
+            //     component: PlaceholderComponent,
+            // },
             {
                 title: 'Search',
                 path: 'search',
-                component: PlaceholderComponent,
+                component: SearchBarComponent,
             },
         ],
     },
