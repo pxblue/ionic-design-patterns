@@ -9,9 +9,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { SpacerModule, InfoListItemModule, EmptyStateModule } from '@pxblue/angular-components';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
     imports: [
+        IonicModule.forRoot(),
         CommonModule,
         MatToolbarModule,
         MatButtonModule,
