@@ -21,15 +21,15 @@ import { DataListModule } from './pages/list/data-list/data-list.module';
 import { IonicModule } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { HomeComponent } from './pages/home/home.component';
 import { ActionListModule } from './pages/list/action-list/action-list.module';
 import { MultiselectListModule } from './pages/list/multiselect-list/multiselect-list.module';
 import { SortableListModule } from './pages/list/sortable-list/sortable-list.module';
 import { StatusListModule } from './pages/list/status-list/status-list.module';
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
+import { LandingPageModule } from './pages/landing-page/landing-page.module';
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent, PlaceholderComponent],
+    declarations: [AppComponent, PlaceholderComponent],
     imports: [
         IonicModule.forRoot(),
         DataListModule,
@@ -57,6 +57,7 @@ import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
         SortableListModule,
         StatusListModule,
         SearchBarModule,
+        LandingPageModule
     ],
     providers: [StatusBar, SplashScreen],
     bootstrap: [AppComponent],
