@@ -26,6 +26,7 @@ import { ActionListModule } from './pages/list/action-list/action-list.module';
 import { MultiselectListModule } from './pages/list/multiselect-list/multiselect-list.module';
 import { SortableListModule } from './pages/list/sortable-list/sortable-list.module';
 import { StatusListModule } from './pages/list/status-list/status-list.module';
+import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 
 @NgModule({
     declarations: [AppComponent, HomeComponent, PlaceholderComponent],
@@ -55,6 +56,7 @@ import { StatusListModule } from './pages/list/status-list/status-list.module';
         MultiselectListModule,
         SortableListModule,
         StatusListModule,
+        SearchBarModule,
     ],
     providers: [StatusBar, SplashScreen],
     bootstrap: [AppComponent],
