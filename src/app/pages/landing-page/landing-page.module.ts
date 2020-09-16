@@ -16,7 +16,7 @@ import { IonicModule } from '@ionic/angular';
         MatIconModule,
         MatButtonModule,
         FlexLayoutModule,
-        IonicModule
+        IonicModule,
     ],
     declarations: [LandingPageComponent],
 })

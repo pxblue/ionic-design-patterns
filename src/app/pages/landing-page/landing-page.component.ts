@@ -28,7 +28,5 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class LandingPageComponent {
     Colors = Colors;
 
-    constructor(
-        public readonly stateService: StateService
-    ) {}
+    constructor(public readonly stateService: StateService) {}
 }

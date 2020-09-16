@@ -57,7 +57,7 @@ import { LandingPageModule } from './pages/landing-page/landing-page.module';
         SortableListModule,
         StatusListModule,
         SearchBarModule,
-        LandingPageModule
+        LandingPageModule,
     ],
     providers: [StatusBar, SplashScreen],
     bootstrap: [AppComponent],
