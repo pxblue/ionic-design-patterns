@@ -1,0 +1,64 @@
+<mat-toolbar color="primary" class="app-bar mat-elevation-z2">
+    <button style="margin-left: -8px;" mat-icon-button (click)="stateService.setDrawerOpen(true)">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" style="margin-left: 24px;">PX Blue Design Patterns</div>
+</mat-toolbar>
+<div style="padding: 10vh 24px 40px; max-width: 600px; margin: 0 auto;">
+    <h2 class="mat-display-3" style="margin-bottom: 24px;" [@headerFadeInAnimation]>
+        The <span [style.color]="Colors.blue[500]">Patterns</span>.
+    </h2>
+    <div [@bodyFadeInAnimation]>
+        <p>
+            A <strong>design pattern</strong> is a common interaction or behavior that should be consistent across
+            applications. In general, we follow most of the design patterns and behavior from the Material Design
+            system. PX Blue design patterns are patterns that extend/modify those from Material or are specific to PX
+            Blue applications.
+        </p>
+        <p>
+            While everyone is encouraged to interact with the design pattern demos to become familiar with the
+            interactions and behaviors, this application is primarily intended for
+            <strong>Ionic developers</strong> to provide examples of how to implement these patterns in their own
+            applications.
+        </p>
+        <button mat-stroked-button color="primary" style="margin-top: 24px;" (click)="stateService.setDrawerOpen(true)">
+            Explore PX Blue Design Patterns
+        </button>
+    </div>
+    <hr style="margin: 40px -16px 32px;" [@linksFadeInAnimation] />
+    <div fxLayout="column" fxLayoutGap="8px" [@linksFadeInAnimation]>
+        <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="16px" style="justify-content: space-between;">
+            <a
+                mat-button
+                target="_blank"
+                href="https://pxblue.github.io/development/frameworks-mobile/ionic"
+                class="landing-page-link"
+            >
+                Ionic Getting Started Guide
+            </a>
+            <a mat-button target="_blank" href="https://pxblue.github.io/patterns" class="landing-page-link">
+                Design Pattern Descriptions
+            </a>
+            <a mat-button target="_blank" href="https://pxblue-components.github.io/angular/" class="landing-page-link">
+                PX Blue Angular Component Library
+            </a>
+            <a mat-button target="_blank" href="https://github.com/pxblue" class="landing-page-link">
+                Visit Us On Github
+            </a>
+            <a
+                mat-button
+                target="_blank"
+                href="https://github.com/pxblue/ionic-design-patterns"
+                class="landing-page-link"
+            >
+                Design Pattern Source on Github
+            </a>
+            <a mat-button target="_blank" href="https://pxblue.github.io/roadmap" class="landing-page-link">
+                Release Roadmap
+            </a>
+            <a mat-button target="_blank" href="https://pxblue.github.io/community/contactus" class="landing-page-link">
+                Send Feedback or Suggestions
+            </a>
+        </div>
+    </div>
+</div>

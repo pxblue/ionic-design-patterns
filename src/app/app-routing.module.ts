@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DataListComponent } from './pages/list/data-list/data-list.component';
 import { PlaceholderComponent } from './pages/placeholder/placeholder.component';
-import { HomeComponent } from './pages/home/home.component';
 import { ActionListComponent } from './pages/list/action-list/action-list.component';
 import { MultiselectListComponent } from './pages/list/multiselect-list/multiselect-list.component';
 import { SortableListComponent } from './pages/list/sortable-list/sortable-list.component';
 import { StatusListComponent } from './pages/list/status-list/status-list.component';
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 export type DrawerItem = {
     title: string;
@@ -125,7 +125,7 @@ const routes = [
     {
         path: '**',
         title: 'Home',
-        component: HomeComponent,
+        component: LandingPageComponent,
     },
 ];
 
