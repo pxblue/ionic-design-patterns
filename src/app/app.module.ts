@@ -27,6 +27,8 @@ import { SortableListModule } from './pages/list/sortable-list/sortable-list.mod
 import { StatusListModule } from './pages/list/status-list/status-list.module';
 import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { LandingPageModule } from './pages/landing-page/landing-page.module';
+import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.module';
+import { ComplexBottomSheetModule } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.module';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
@@ -58,6 +60,8 @@ import { LandingPageModule } from './pages/landing-page/landing-page.module';
         StatusListModule,
         SearchBarModule,
         LandingPageModule,
+        BasicBottomSheetModule,
+        ComplexBottomSheetModule
     ],
     providers: [StatusBar, SplashScreen],
     bootstrap: [AppComponent],

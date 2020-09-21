@@ -8,6 +8,8 @@ import { SortableListComponent } from './pages/list/sortable-list/sortable-list.
 import { StatusListComponent } from './pages/list/status-list/status-list.component';
 import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.component';
+import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.component';
 
 export type DrawerItem = {
     title: string;
@@ -98,12 +100,12 @@ export const NAV_ITEMS: DrawerItem[] = [
             {
                 title: 'Basic Bottom Sheet',
                 path: 'basic-bottom-sheet',
-                component: PlaceholderComponent,
+                component: BasicBottomSheetComponent,
             },
             {
                 title: 'Complex Bottom Sheet',
                 path: 'complex-bottom-sheet',
-                component: PlaceholderComponent,
+                component: ComplexBottomSheetComponent,
             },
         ],
     },
