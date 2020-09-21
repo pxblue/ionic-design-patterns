@@ -61,7 +61,7 @@ import { ComplexBottomSheetModule } from './pages/overlays/complex-bottom-sheet/
         SearchBarModule,
         LandingPageModule,
         BasicBottomSheetModule,
-        ComplexBottomSheetModule
+        ComplexBottomSheetModule,
     ],
     providers: [StatusBar, SplashScreen],
     bootstrap: [AppComponent],
