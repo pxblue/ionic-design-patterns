@@ -52,6 +52,9 @@
         min-width: 100px;
     }
     pxb-hero-banner {
-        height: 100px;
+        min-height: 100px;
+    }
+    .pxb-hero-banner {
+        flex-wrap: wrap;
     }
 }
