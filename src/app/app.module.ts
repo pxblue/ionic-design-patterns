@@ -63,7 +63,7 @@ import { LoadingStatesModule } from './pages/loading-states/loading-states.modul
         LandingPageModule,
         BasicBottomSheetModule,
         ComplexBottomSheetModule,
-        LoadingStatesModule
+        LoadingStatesModule,
     ],
     providers: [StatusBar, SplashScreen],
     bootstrap: [AppComponent],

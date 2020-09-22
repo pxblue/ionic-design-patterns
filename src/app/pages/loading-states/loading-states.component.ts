@@ -11,9 +11,7 @@ export class LoadingStatesComponent implements OnInit {
     cols = 1;
     deviceList = placeholderList;
 
-    constructor(
-        private readonly _drawerService: StateService,
-    ) {}
+    constructor(private readonly _drawerService: StateService) {}
 
     ngOnInit(): void {
         this.refreshData();
@@ -21,9 +19,9 @@ export class LoadingStatesComponent implements OnInit {
 
     refreshData(): void {
         this.deviceList = placeholderList;
-        // setTimeout(() => {
-        //     this.deviceList = dataList;
-        // }, 3000);
+        setTimeout(() => {
+            this.deviceList = dataList;
+        }, 3000);
     }
 
     toggleMenu(): void {

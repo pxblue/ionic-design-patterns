@@ -36,7 +36,7 @@ import { ColorPipe } from './pipes/color.pipe';
         HttpClientModule,
         NgProgressIconsModule,
         ChannelValueModule,
-        InfoListItemModule
+        InfoListItemModule,
     ],
     declarations: [IconPipe, GradePipe, ColorPipe, LoadingStatesComponent, PlaceholderCardComponent],
 })
