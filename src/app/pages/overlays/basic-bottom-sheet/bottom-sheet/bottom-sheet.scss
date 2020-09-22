@@ -1,5 +1,6 @@
 .mat-bottom-sheet-container {
     padding: 0;
+    margin-bottom: env(safe-area-inset-bottom);
 }
 
 .mat-nav-list {

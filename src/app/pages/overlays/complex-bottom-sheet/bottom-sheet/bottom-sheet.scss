@@ -4,6 +4,10 @@
     margin-bottom: 0;
 }
 
+.mat-bottom-sheet-container {
+    margin-bottom: env(safe-area-inset-bottom);
+}
+
 .active {
     .pxb-hero-label,
     &.pxb-hero .pxb-hero-primary-wrapper {
@@ -54,7 +58,7 @@
     pxb-hero-banner {
         min-height: 100px;
     }
-    .pxb-hero-banner {
+    .pxb-hero-banner-content {
         flex-wrap: wrap;
     }
 }
