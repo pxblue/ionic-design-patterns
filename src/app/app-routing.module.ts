@@ -10,6 +10,7 @@ import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.compon
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.component';
 import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.component';
+import { LoadingStatesComponent } from './pages/loading-states/loading-states.component';
 
 export type DrawerItem = {
     title: string;
@@ -43,7 +44,7 @@ export const NAV_ITEMS: DrawerItem[] = [
             {
                 title: 'Loading',
                 path: 'loading',
-                component: PlaceholderComponent,
+                component: LoadingStatesComponent,
             },
         ],
     },
