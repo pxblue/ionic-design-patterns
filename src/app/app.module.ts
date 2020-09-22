@@ -29,6 +29,7 @@ import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
 import { LandingPageModule } from './pages/landing-page/landing-page.module';
 import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.module';
 import { ComplexBottomSheetModule } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.module';
+import { CollapsibleAppBarModule } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.module';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
@@ -62,6 +63,7 @@ import { ComplexBottomSheetModule } from './pages/overlays/complex-bottom-sheet/
         LandingPageModule,
         BasicBottomSheetModule,
         ComplexBottomSheetModule,
+        CollapsibleAppBarModule,
     ],
     providers: [StatusBar, SplashScreen],
     bootstrap: [AppComponent],

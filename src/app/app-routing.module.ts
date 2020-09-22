@@ -10,6 +10,7 @@ import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.compon
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.component';
 import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.component';
+import { CollapsibleAppBarComponent } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.component';
 
 export type DrawerItem = {
     title: string;
@@ -24,11 +25,11 @@ export const NAV_ITEMS: DrawerItem[] = [
         title: 'App Bar',
         path: 'app-bar',
         children: [
-            // {
-            //     title: 'Collapsible',
-            //     path: 'collapsible',
-            //     component: PlaceholderComponent,
-            // },
+            {
+                title: 'Collapsible',
+                path: 'collapsible',
+                component: CollapsibleAppBarComponent,
+            },
             {
                 title: 'Search',
                 path: 'search',
