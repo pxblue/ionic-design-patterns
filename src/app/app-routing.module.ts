@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DataListComponent } from './pages/list/data-list/data-list.component';
-import { PlaceholderComponent } from './pages/placeholder/placeholder.component';
 import { ActionListComponent } from './pages/list/action-list/action-list.component';
 import { MultiselectListComponent } from './pages/list/multiselect-list/multiselect-list.component';
 import { SortableListComponent } from './pages/list/sortable-list/sortable-list.component';
@@ -43,16 +42,16 @@ export const NAV_ITEMS: DrawerItem[] = [
         path: 'loading',
         component: LoadingStatesComponent,
     },
-    {
-        title: 'Form Validation',
-        path: 'form-validation',
-        component: PlaceholderComponent,
-    },
-    {
-        title: 'Internationalization',
-        path: 'internationalization',
-        component: PlaceholderComponent,
-    },
+    // {
+    //     title: 'Form Validation',
+    //     path: 'form-validation',
+    //     component: PlaceholderComponent,
+    // },
+    // {
+    //     title: 'Internationalization',
+    //     path: 'internationalization',
+    //     component: PlaceholderComponent,
+    // },
     {
         title: 'Lists',
         path: 'lists',
@@ -105,17 +104,17 @@ export const NAV_ITEMS: DrawerItem[] = [
             },
         ],
     },
-    {
-        title: 'Steppers',
-        path: 'steppers',
-        children: [
-            {
-                title: 'Dynamic Stepper',
-                path: 'dynamic-stepper',
-                component: PlaceholderComponent,
-            },
-        ],
-    },
+    // {
+    //     title: 'Steppers',
+    //     path: 'steppers',
+    //     children: [
+    //         {
+    //             title: 'Dynamic Stepper',
+    //             path: 'dynamic-stepper',
+    //             component: PlaceholderComponent,
+    //         },
+    //     ],
+    // },
 ];
 
 const routes = [
