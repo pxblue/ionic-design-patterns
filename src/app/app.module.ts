@@ -30,6 +30,7 @@ import { LandingPageModule } from './pages/landing-page/landing-page.module';
 import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.module';
 import { ComplexBottomSheetModule } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.module';
 import { LoadingStatesModule } from './pages/loading-states/loading-states.module';
+import { CollapsibleAppBarModule } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.module';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
@@ -64,6 +65,7 @@ import { LoadingStatesModule } from './pages/loading-states/loading-states.modul
         BasicBottomSheetModule,
         ComplexBottomSheetModule,
         LoadingStatesModule,
+        CollapsibleAppBarModule,
     ],
     providers: [StatusBar, SplashScreen],
     bootstrap: [AppComponent],
