@@ -39,15 +39,9 @@ export const NAV_ITEMS: DrawerItem[] = [
         ],
     },
     {
-        title: 'Empty States',
-        path: 'empty-states',
-        children: [
-            {
-                title: 'Loading',
-                path: 'loading',
-                component: LoadingStatesComponent,
-            },
-        ],
+        title: 'Loading States',
+        path: 'loading',
+        component: LoadingStatesComponent,
     },
     {
         title: 'Form Validation',
