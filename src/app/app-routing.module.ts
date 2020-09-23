@@ -10,6 +10,7 @@ import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.compon
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.component';
 import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.component';
+import { LoadingStatesComponent } from './pages/loading-states/loading-states.component';
 import { CollapsibleAppBarComponent } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.component';
 
 export type DrawerItem = {
@@ -38,15 +39,9 @@ export const NAV_ITEMS: DrawerItem[] = [
         ],
     },
     {
-        title: 'Empty States',
-        path: 'empty-states',
-        children: [
-            {
-                title: 'Loading',
-                path: 'loading',
-                component: PlaceholderComponent,
-            },
-        ],
+        title: 'Loading States',
+        path: 'loading',
+        component: LoadingStatesComponent,
     },
     {
         title: 'Form Validation',
