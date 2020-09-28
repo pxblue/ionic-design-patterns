@@ -1,39 +1,31 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { StateService } from './services/state.service';
-import * as PXBColors from '@pxblue/colors';
-import { DrawerLayoutVariantType } from '@pxblue/angular-components';
 import { DrawerItem, NAV_ITEMS } from './app-routing.module';
-import { ViewportService } from './services/viewport.service';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    colors: Record<string, any> = PXBColors;
     routes = NAV_ITEMS;
     selected: string;
 
     constructor(
-        private router: Router,
-        public readonly stateService: StateService,
-        public viewportService: ViewportService
+        private readonly _router: Router,
+        private readonly _drawerService: StateService,
+        private readonly _changeDetectorRef: ChangeDetectorRef
     ) {}
 
-    select(route: DrawerItem, parentRoute: string = '/'): void {
+    select(route: DrawerItem, parentRoute = '/'): void {
         if (!route.children) {
-            this.router.navigate([parentRoute + route.path]);
+            void this._router.navigate([parentRoute + route.path]);
             this.selected = route.title;
-            if (this.viewportService.isSmall()) {
-                this.stateService.setDrawerOpen(false);
-            }
+            this._drawerService.setDrawerOpen(false);
         }
     }
 
     goHome(): void {
-        console.log('clicked');
-        this.router.navigate(['']);
+        void this._router.navigate(['']);
     }
 }

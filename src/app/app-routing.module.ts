@@ -1,8 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { DataListComponent } from './pages/list/data-list/data-list.component';
-import { PlaceholderComponent } from './pages/placeholder/placeholder.component';
-import { HomeComponent } from './pages/home/home.component';
+import { ActionListComponent } from './pages/list/action-list/action-list.component';
+import { MultiselectListComponent } from './pages/list/multiselect-list/multiselect-list.component';
+import { SortableListComponent } from './pages/list/sortable-list/sortable-list.component';
+import { StatusListComponent } from './pages/list/status-list/status-list.component';
+import { SearchBarComponent } from './pages/app-bar/search-bar/search-bar.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.component';
+import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.component';
+import { LoadingStatesComponent } from './pages/loading-states/loading-states.component';
+import { CollapsibleAppBarComponent } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.component';
 
 export type DrawerItem = {
     title: string;
@@ -20,36 +28,30 @@ export const NAV_ITEMS: DrawerItem[] = [
             {
                 title: 'Collapsible',
                 path: 'collapsible',
-                component: PlaceholderComponent,
+                component: CollapsibleAppBarComponent,
             },
             {
                 title: 'Search',
                 path: 'search',
-                component: PlaceholderComponent,
+                component: SearchBarComponent,
             },
         ],
     },
     {
-        title: 'Empty States',
-        path: 'empty-states',
-        children: [
-            {
-                title: 'Loading',
-                path: 'loading',
-                component: PlaceholderComponent,
-            },
-        ],
+        title: 'Loading States',
+        path: 'loading',
+        component: LoadingStatesComponent,
     },
-    {
-        title: 'Form Validation',
-        path: 'form-validation',
-        component: PlaceholderComponent,
-    },
-    {
-        title: 'Internationalization',
-        path: 'internationalization',
-        component: PlaceholderComponent,
-    },
+    // {
+    //     title: 'Form Validation',
+    //     path: 'form-validation',
+    //     component: PlaceholderComponent,
+    // },
+    // {
+    //     title: 'Internationalization',
+    //     path: 'internationalization',
+    //     component: PlaceholderComponent,
+    // },
     {
         title: 'Lists',
         path: 'lists',
@@ -57,7 +59,7 @@ export const NAV_ITEMS: DrawerItem[] = [
             {
                 title: 'Action List',
                 path: 'action-list',
-                component: PlaceholderComponent,
+                component: ActionListComponent,
             },
             {
                 title: 'Data List',
@@ -67,23 +69,23 @@ export const NAV_ITEMS: DrawerItem[] = [
             {
                 title: 'Multiselect List',
                 path: 'multi-select-list',
-                component: PlaceholderComponent,
+                component: MultiselectListComponent,
             },
             {
                 title: 'Sortable List',
                 path: 'sortable-list',
-                component: PlaceholderComponent,
+                component: SortableListComponent,
             },
             {
                 title: 'Status List',
                 path: 'status-list',
-                component: PlaceholderComponent,
+                component: StatusListComponent,
             },
-            {
-                title: 'Responsive Table',
-                path: 'responsive-table',
-                component: PlaceholderComponent,
-            },
+            // {
+            //     title: 'Responsive Table',
+            //     path: 'responsive-table',
+            //     component: PlaceholderComponent,
+            // },
         ],
     },
     {
@@ -93,26 +95,26 @@ export const NAV_ITEMS: DrawerItem[] = [
             {
                 title: 'Basic Bottom Sheet',
                 path: 'basic-bottom-sheet',
-                component: PlaceholderComponent,
+                component: BasicBottomSheetComponent,
             },
             {
                 title: 'Complex Bottom Sheet',
                 path: 'complex-bottom-sheet',
-                component: PlaceholderComponent,
+                component: ComplexBottomSheetComponent,
             },
         ],
     },
-    {
-        title: 'Steppers',
-        path: 'steppers',
-        children: [
-            {
-                title: 'Dynamic Stepper',
-                path: 'dynamic-stepper',
-                component: PlaceholderComponent,
-            },
-        ],
-    },
+    // {
+    //     title: 'Steppers',
+    //     path: 'steppers',
+    //     children: [
+    //         {
+    //             title: 'Dynamic Stepper',
+    //             path: 'dynamic-stepper',
+    //             component: PlaceholderComponent,
+    //         },
+    //     ],
+    // },
 ];
 
 const routes = [
@@ -120,7 +122,7 @@ const routes = [
     {
         path: '**',
         title: 'Home',
-        component: HomeComponent,
+        component: LandingPageComponent,
     },
 ];
 

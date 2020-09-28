@@ -1,17 +1,11 @@
 import { Component } from '@angular/core';
 import { StateService } from '../../services/state.service';
-import { ViewportService } from '../../services/viewport.service';
 
 @Component({
     selector: 'app-placeholder',
     template: ` <div>
         <mat-toolbar color="primary" style="color: white">
-            <button
-                *ngIf="viewportService.isSmall()"
-                mat-icon-button
-                style="margin-right: 16px"
-                (click)="stateService.setDrawerOpen(true)"
-            >
+            <button mat-icon-button style="margin-right: 16px" (click)="open()">
                 <mat-icon>menu</mat-icon>
             </button>
             <h2>Placeholder</h2>
@@ -20,5 +14,9 @@ import { ViewportService } from '../../services/viewport.service';
     </div>`,
 })
 export class PlaceholderComponent {
-    constructor(public readonly stateService: StateService, public readonly viewportService: ViewportService) {}
+    constructor(private readonly _drawerService: StateService) {}
+
+    open(): void {
+        this._drawerService.setDrawerOpen(true);
+    }
 }

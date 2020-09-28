@@ -21,10 +21,19 @@ import { DataListModule } from './pages/list/data-list/data-list.module';
 import { IonicModule } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { HomeComponent } from './pages/home/home.component';
+import { ActionListModule } from './pages/list/action-list/action-list.module';
+import { MultiselectListModule } from './pages/list/multiselect-list/multiselect-list.module';
+import { SortableListModule } from './pages/list/sortable-list/sortable-list.module';
+import { StatusListModule } from './pages/list/status-list/status-list.module';
+import { SearchBarModule } from './pages/app-bar/search-bar/search-bar.module';
+import { LandingPageModule } from './pages/landing-page/landing-page.module';
+import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basic-bottom-sheet.module';
+import { ComplexBottomSheetModule } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.module';
+import { LoadingStatesModule } from './pages/loading-states/loading-states.module';
+import { CollapsibleAppBarModule } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.module';
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent, PlaceholderComponent],
+    declarations: [AppComponent, PlaceholderComponent],
     imports: [
         IonicModule.forRoot(),
         DataListModule,
@@ -47,6 +56,16 @@ import { HomeComponent } from './pages/home/home.component';
         MatFormFieldModule,
         MatTabsModule,
         EmptyStateModule,
+        ActionListModule,
+        MultiselectListModule,
+        SortableListModule,
+        StatusListModule,
+        SearchBarModule,
+        LandingPageModule,
+        BasicBottomSheetModule,
+        ComplexBottomSheetModule,
+        LoadingStatesModule,
+        CollapsibleAppBarModule,
     ],
     providers: [StatusBar, SplashScreen],
     bootstrap: [AppComponent],
