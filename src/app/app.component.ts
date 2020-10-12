@@ -13,7 +13,7 @@ export class AppComponent {
 
     constructor(
         private readonly _router: Router,
-        private readonly _drawerService: StateService,
+        public readonly drawerService: StateService,
         private readonly _changeDetectorRef: ChangeDetectorRef
     ) {}
 
@@ -21,7 +21,7 @@ export class AppComponent {
         if (!route.children) {
             void this._router.navigate([parentRoute + route.path]);
             this.selected = route.title;
-            this._drawerService.setDrawerOpen(false);
+            this.drawerService.setDrawerOpen(false);
         }
     }
 
