@@ -14,28 +14,24 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "www",
+            "allowedCommonJsDependencies": [
+              "color",
+              "@pxblue/colors"
+            ],
+            "outputPath": "dist/ionic-design-patterns",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "assets"
-              },
-              {
-                "glob": "**/*.svg",
-                "input": "node_modules/ionicons/dist/ionicons/svg",
-                "output": "./svg"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss",
+              "./node_modules/typeface-open-sans",
               "./node_modules/@pxblue/angular-themes/theme.scss",
-              "./node_modules/placeholder-loading/src/scss/placeholder-loading.scss",
-              "./node_modules/typeface-open-sans"
+              "./node_modules/placeholder-loading/src/scss/placeholder-loading.scss"
             ],
             "scripts": []
           },
@@ -96,20 +92,30 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "styles": [],
-            "scripts": [],
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "/assets"
-              }
-            ]
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss",
+              "./node_modules/typeface-open-sans",
+              "./node_modules/@pxblue/angular-themes/theme.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "app:serve"
           },
           "configurations": {
+            "production": {
+              "devServerTarget": "app:serve:production"
+            },
             "ci": {
-              "progress": false,
-              "watch": false
+              "devServerTarget": "app:serve:ci"
             }
           }
         },
