@@ -1508,17 +1508,17 @@
     node-gyp "^7.1.0"
     read-package-json-fast "^1.1.3"
 
-"@pxblue/angular-components@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-components/-/angular-components-3.0.1.tgz#a0bf1648b1db90b9d5e3dfe2888cd5f74ac4315b"
-  integrity sha512-uxPMerZFOi5Bu2Vypbqikq4o7OXpUIS6ZkCOpvWyp7XqcPSuuMkWdR1kcJ9GtiuzHF8pGwxffoJPrSll7nt3vA==
+"@pxblue/angular-components@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@pxblue/angular-components/-/angular-components-4.0.0.tgz#1244a22ef8e7ba17f258773ceb7d948b6adfb4b6"
+  integrity sha512-x2KjB/uTBrnl5LUN8y9BLuf2IWnh6kiwEBUwdbUKJ6YUxsng0h+nMg7qJ73eWESkObF39qeNb2+O80hTUq8eNQ==
   dependencies:
-    tslib "^1.9.0"
+    tslib "^2.0.0"
 
-"@pxblue/angular-themes@^5.1.2":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-5.1.2.tgz#87c093cfca9e62576afc4597bc7a28f083eb8e9d"
-  integrity sha512-rCjjXWoVjW+nJBpw4ZrlIxQnwKY8PfI1iX0bZDqyuVnNSHUEgJFQnzxNgyv/VYcZPeN39nXwAfvl6+5ZiWV4dA==
+"@pxblue/angular-themes@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-5.2.0.tgz#1146a925dea96d11a6abea900be3acb55f56b383"
+  integrity sha512-lwMPdBLop2Tu9UdWIWqEC6VZishe87jmFtTUtO5gVGwqiclPdWyKcgGu5PU0/W7k/qNDYVswFmo54nOdU5QncQ==
   dependencies:
     "@pxblue/colors" "^3.0.0"
     typeface-open-sans "^0.0.75"
@@ -1540,21 +1540,22 @@
   optionalDependencies:
     eslint-plugin-react "^7.16.0"
 
-"@pxblue/icons-svg@^1.0.10":
+"@pxblue/icons-svg@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@pxblue/icons-svg/-/icons-svg-1.1.1.tgz#64ba59fa7e7ae4e82d8fc218de07cd67a8c09eed"
   integrity sha512-z77H5q2/ywBYRLhhpsbjxFHNJhW0eMm5EXVIwC8uyS0xdHaQAvWREDftWt4kYxTt8La2y+EmEQaJJ4K/mVNqbQ==
 
-"@pxblue/icons@^1.0.25":
-  version "1.0.26"
-  resolved "https://registry.yarnpkg.com/@pxblue/icons/-/icons-1.0.26.tgz#333feebc7a8afa325a6837a45bf60e7dad4586be"
-  integrity sha512-Un8nWIl6dlrahdBHM4XpfBt9su/mHcTrBtEvteRIdWNdxfSLhmIv5E9YzlR1q4kjnfT17947EuJa2l8ll0ioQg==
+"@pxblue/icons@^1.1.0":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@pxblue/icons/-/icons-1.1.1.tgz#93d30dc223b88bddd2e1983d8b67e33220474e8d"
+  integrity sha512-NbN60sHjf20I9Wz3M5A+GdEx7/d2AaZkXpvRuCtT4lrLUSVUJhRZm+fWyIRkeMr5rHvthI78tlZ9Lva23Ujraw==
 
-"@pxblue/ng-progress-icons@^1.1.3":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/ng-progress-icons/-/ng-progress-icons-1.2.0.tgz#db2baf6a7eda8d87e83d9fc0d7a161758dc3ca66"
-  integrity sha512-JQQBcLqPTFzJayGhB4y0tBAqpRICMBaZ4Ah3IB0Ycccd3PipdOVbhBIm/jzRlpLcKIlLxmCm4zRD5P+JakuL8Q==
+"@pxblue/ng-progress-icons@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@pxblue/ng-progress-icons/-/ng-progress-icons-1.2.1.tgz#2a512107d774e7bc22cdaecf2718cd42094ccd78"
+  integrity sha512-qBowwudAnmHG8wAtvCcSgY4Y3AGGStgsbhrzOH6+nHh5FI6XZoeygTB30kadF/ppuiR/VRD0Q2HhbRDNLkt9Tg==
   dependencies:
+    color "^3.1.2"
     tslib "^1.9.0"
 
 "@pxblue/prettier-config@^1.0.2":
