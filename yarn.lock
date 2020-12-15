@@ -1540,21 +1540,22 @@
   optionalDependencies:
     eslint-plugin-react "^7.16.0"
 
-"@pxblue/icons-svg@^1.0.10":
+"@pxblue/icons-svg@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@pxblue/icons-svg/-/icons-svg-1.1.1.tgz#64ba59fa7e7ae4e82d8fc218de07cd67a8c09eed"
   integrity sha512-z77H5q2/ywBYRLhhpsbjxFHNJhW0eMm5EXVIwC8uyS0xdHaQAvWREDftWt4kYxTt8La2y+EmEQaJJ4K/mVNqbQ==
 
-"@pxblue/icons@^1.0.25":
-  version "1.0.26"
-  resolved "https://registry.yarnpkg.com/@pxblue/icons/-/icons-1.0.26.tgz#333feebc7a8afa325a6837a45bf60e7dad4586be"
-  integrity sha512-Un8nWIl6dlrahdBHM4XpfBt9su/mHcTrBtEvteRIdWNdxfSLhmIv5E9YzlR1q4kjnfT17947EuJa2l8ll0ioQg==
+"@pxblue/icons@^1.1.0":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@pxblue/icons/-/icons-1.1.1.tgz#93d30dc223b88bddd2e1983d8b67e33220474e8d"
+  integrity sha512-NbN60sHjf20I9Wz3M5A+GdEx7/d2AaZkXpvRuCtT4lrLUSVUJhRZm+fWyIRkeMr5rHvthI78tlZ9Lva23Ujraw==
 
-"@pxblue/ng-progress-icons@^1.1.3":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/ng-progress-icons/-/ng-progress-icons-1.2.0.tgz#db2baf6a7eda8d87e83d9fc0d7a161758dc3ca66"
-  integrity sha512-JQQBcLqPTFzJayGhB4y0tBAqpRICMBaZ4Ah3IB0Ycccd3PipdOVbhBIm/jzRlpLcKIlLxmCm4zRD5P+JakuL8Q==
+"@pxblue/ng-progress-icons@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@pxblue/ng-progress-icons/-/ng-progress-icons-1.2.1.tgz#2a512107d774e7bc22cdaecf2718cd42094ccd78"
+  integrity sha512-qBowwudAnmHG8wAtvCcSgY4Y3AGGStgsbhrzOH6+nHh5FI6XZoeygTB30kadF/ppuiR/VRD0Q2HhbRDNLkt9Tg==
   dependencies:
+    color "^3.1.2"
     tslib "^1.9.0"
 
 "@pxblue/prettier-config@^1.0.2":
