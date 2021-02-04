@@ -32,7 +32,7 @@
     "@ionic/angular": "^4.7.1",
     "@netbasal/ngx-content-loader": "^3.0.0",
     "@pxblue/angular-components": "^4.0.0",
-    "@pxblue/angular-themes": "^5.2.0",
+    "@pxblue/angular-themes": "^6.0.0-beta.0",
     "@pxblue/colors": "^3.0.0",
     "@pxblue/icons": "^1.1.0",
     "@pxblue/icons-svg": "^1.1.1",
@@ -51,7 +51,6 @@
     "placeholder-loading": "^0.2.6",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "typeface-open-sans": "^0.0.54",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
