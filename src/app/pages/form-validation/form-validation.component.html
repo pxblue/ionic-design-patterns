@@ -1,3 +1,104 @@
-<div class="eaton mat-typography" style="overflow-x: hidden;" fxFlexFill cdkScrollable>
-  
-</div>
+<mat-toolbar color="primary" >
+    <button mat-icon-button (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title">Form Validation</div>
+</mat-toolbar>
+
+<section class="mat-typography" >
+    <div class="example-container">
+        <h2>Basic Form Fields</h2>
+        <p class="form-description">
+            The following examples show how to perform validation on various input types. The error icon on invalid
+            inputs is optional, but adds redundancy for color blind users.
+        </p>
+        <form >  <!-- [FormGroup] perhaps -->
+            <mat-form-field appearance="fill">
+                <mat-label>Input</mat-label>
+                <input
+                    matInput
+                    placeholder="Input"
+                    type="text"
+                />
+                <!-- error state goes here -->
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="Enter your email" formControlName="email" />
+                <!-- error state goes here -->
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Phone number</mat-label>
+                <input
+                    matInput
+                    placeholder="Phone Number"
+                    maxlength="22"
+                />
+                <!-- error state goes here -->
+            </mat-form-field>
+        </form>
+    </div>
+
+    <div class="example-container">
+        <h2>Character Limits</h2>
+        <p class="form-description">
+            The following example shows how to restrict the length of an input field. In these cases, you should provide
+            the user an indication of how many characters are available.
+        </p>
+        <mat-form-field hintLabel="Max 30 characters" >
+            <mat-label>Enter Some Text</mat-label>
+            <input matInput maxlength="30" placeholder="Enter some text" />
+            <!-- error state goes here -->
+        </mat-form-field>
+    </div>
+    <div class="example-container">
+        <h2>Password Validation</h2>
+        <p class="form-description">
+            The following example shows how to enforce password strength restrictions and confirmation field matching.
+            The password strength requirements for your application may differ from this example.
+        </p>
+        <form > <!-- [formGroup] perhaps -->
+            <mat-form-field appearance="fill">
+                <mat-label>Old Password</mat-label>
+                <input
+                    matInput
+                    placeholder="Old Password"
+                />
+                <!-- Toggle visibility or don't Toggle ? -->
+                <button mat-icon-button >
+                    <mat-icon>visibility_off</mat-icon>
+                </button>
+            </mat-form-field>
+            <div > <!-- [formGroup] perhaps -->
+                <mat-form-field style="margin-bottom: 24px">
+                    <mat-label>New Password</mat-label>
+                    <input
+                        matInput
+                        placeholder="New Password"
+                    />
+                    <!-- Toggle visibility or don't Toggle ? -->
+                    <button mat-icon-button matSuffix >
+                        <mat-icon>visibility_off</mat-icon>
+                    </button>
+                </mat-form-field>
+                <mat-list class="validation-list">
+                    <!-- list of required Password parameters with responsive icons -->
+                </mat-list>
+                <mat-form-field >
+                    <mat-label>Confirm Password</mat-label>
+                    <input
+                        matInput
+                        placeholder="Confirm Password"
+                    />
+                    <!-- Toggle visibility or don't Toggle ? -->
+                    <button mat-icon-button matSuffix >
+                        <mat-icon>visibility_off</mat-icon>
+                    </button>
+                    <!-- error state goes here -->
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+</section>
