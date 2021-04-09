@@ -17,7 +17,9 @@ class CrossFieldErrorMatcher implements ErrorStateMatcher {
 })
 export class FormValidationComponent implements OnInit {
   isCollapsed: boolean;
-  basicFrom: FormGroup;
+  basicForm: FormGroup;
+  errorMatcher = new CrossFieldErrorMatcher();
+
 
   constructor(
     private readonly _drawerService: StateService,
@@ -27,14 +29,14 @@ export class FormValidationComponent implements OnInit {
 
   ngOnInit(): void { 
     this._breakpointObserver
-            .observe([Breakpoints.Small, Breakpoints.Handset])
-            .subscribe((state: BreakpointState) => {
-                if (state.matches) {
-                    this.isCollapsed = true;
-                } else {
-                    this.isCollapsed = false;
-                }
-            });
+      .observe([Breakpoints.Small, Breakpoints.Handset])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+            this.isCollapsed = true;
+        } else {
+            this.isCollapsed = false;
+        }
+      });
   }
 
   toggleMenu(): void {
@@ -42,4 +44,17 @@ export class FormValidationComponent implements OnInit {
     this._drawerService.setDrawerOpen(!drawerOpen);
   }
 
+  initForm(): void {
+    this.basicForm = this._formBuilder.group({
+      inputControl: ['', Validators.required],
+      email: [
+        '',
+        Validators.compose([
+            Validators.required,
+            Validators.email,
+            Validators.pattern(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i),
+        ]),
+      ],
+    });
+  }
 }

@@ -26,17 +26,28 @@
                 <mat-icon
                     *ngIf="basicForm?.controls?.inputControl.touched"
                     matSuffix
-                    [ngClass]="basicForm?.controls?.inputControl.errors ? 'failure-red' : 'success'">
-                    {{ basicForm?.controls?.inputControl.errors ? 'clear' : 'done' }}</mat-icon>
-                <mat-error data-cy="input-error-text" *ngIf="basicForm.get('inputControl').hasError('required')"
+                    [ngClass]="basicForm?.controls?.inputControl.errors ? 'failure-red' : 'success'"
+                    >
+                    {{ basicForm?.controls?.inputControl.errors ? 'clear' : 'done' }}
+                </mat-icon>
+                <mat-error *ngIf="basicForm.get('inputControl').hasError('required')"
                     >required</mat-error>
                 <mat-hint>This is a regular input field.</mat-hint>
             </mat-form-field>
 
             <mat-form-field>
                 <mat-label>Enter your email</mat-label>
-                <input matInput placeholder="Enter your email" formControlName="email" />
+                <input matInput placeholder="Enter your email" formControlName="email" required />
                 <!-- error state goes here -->
+                <mat-icon
+                    *ngIf="userForm?.controls?.email.touched"
+                    matSuffix
+                    [ngClass]="userForm?.controls?.email.errors ? 'failure-red' : 'success'">
+                    {{ userForm?.controls?.email.errors ? 'clear' : 'done' }}
+                </mat-icon>
+                <mat-error *ngIf="userForm.get('email').hasError('pattern')">Invalid email address</mat-error>
+                <mat-error *ngIf="userForm.get('email').hasError('required')">required</mat-error>
+                <mat-hint>This field throws an error if the email format is incorrect.</mat-hint>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
