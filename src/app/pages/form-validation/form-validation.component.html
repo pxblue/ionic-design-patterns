@@ -37,16 +37,19 @@
 
             <mat-form-field>
                 <mat-label>Enter your email</mat-label>
-                <input matInput placeholder="Enter your email" formControlName="email" required />
+                <input 
+                    matInput placeholder="Enter your email" 
+                    formControlName="email" 
+                    required />
                 <!-- error state goes here -->
                 <mat-icon
-                    *ngIf="userForm?.controls?.email.touched"
+                    *ngIf="basicForm?.controls?.email.touched"
                     matSuffix
-                    [ngClass]="userForm?.controls?.email.errors ? 'failure-red' : 'success'">
-                    {{ userForm?.controls?.email.errors ? 'clear' : 'done' }}
+                    [ngClass]="basicForm?.controls?.email.errors ? 'failure-red' : 'success'">
+                    {{ basicForm?.controls?.email.errors ? 'clear' : 'done' }}
                 </mat-icon>
-                <mat-error *ngIf="userForm.get('email').hasError('pattern')">Invalid email address</mat-error>
-                <mat-error *ngIf="userForm.get('email').hasError('required')">required</mat-error>
+                <mat-error *ngIf="basicForm.get('email').hasError('pattern')">Invalid email address</mat-error>
+                <mat-error *ngIf="basicForm.get('email').hasError('required')">required</mat-error>
                 <mat-hint>This field throws an error if the email format is incorrect.</mat-hint>
             </mat-form-field>
 
@@ -56,8 +59,23 @@
                     matInput
                     placeholder="Phone Number"
                     maxlength="22"
+                    formControlName="phoneNumControl"
+                    (keypress)="numberOnly($event)"
+                    required
                 />
                 <!-- error state goes here -->
+                <mat-icon
+                    *ngIf="basicForm?.controls?.phoneNumControl.touched"
+                    matSuffix
+                    [ngClass]="basicForm?.controls?.phoneNumControl.errors ? 'failure-red' : 'success'"
+                >
+                    {{ basicForm?.controls?.phoneNumber.errors ? 'clear' : 'done' }}</mat-icon>
+                <mat-error *ngIf="basicForm.get('phoneNumControl').hasError('pattern')">Invalid phone number</mat-error>
+                <mat-error *ngIf="basicForm.get('phoneNumControl').hasError('required')">required</mat-error>
+                <mat-hint>
+                    This field throws an error if the phone number format is incorrect. (Needs to be a valid U.S.
+                    number)
+                </mat-hint>
             </mat-form-field>
         </form>
     </div>

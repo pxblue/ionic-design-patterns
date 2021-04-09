@@ -50,9 +50,17 @@ export class FormValidationComponent implements OnInit {
       email: [
         '',
         Validators.compose([
-            Validators.required,
-            Validators.email,
-            Validators.pattern(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i),
+          Validators.required,
+          Validators.email,
+          Validators.pattern(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i),
+        ]),
+      ],
+      phoneNumber: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(10),
+          Validators.pattern(/((\(\d{3}\)?)|(\d{3}))([\s-./]?)(\d{3})([\s-./]?)(\d{4})/),
         ]),
       ],
     });
