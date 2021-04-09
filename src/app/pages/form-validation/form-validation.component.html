@@ -1,26 +1,36 @@
-<mat-toolbar color="primary" >
-    <button mat-icon-button (click)="toggleMenu()">
+<mat-toolbar color="primary" class="app-bar mat-elevation-z2">
+    <button *ngIf="isCollapsed" mat-icon-button (click)="toggleMenu()">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title">Form Validation</div>
+    <div class="mat-title" [style.marginLeft.px]="isCollapsed ? 24 : 0">Form Validation</div>
 </mat-toolbar>
 
-<section class="mat-typography" >
+<section class="mat-typography" [class.small]="isCollapsed">
     <div class="example-container">
         <h2>Basic Form Fields</h2>
-        <p class="form-description">
+        <p class="form-description" >
             The following examples show how to perform validation on various input types. The error icon on invalid
             inputs is optional, but adds redundancy for color blind users.
         </p>
-        <form >  <!-- [FormGroup] perhaps -->
+        <form [formGroup]="basicForm">
             <mat-form-field appearance="fill">
                 <mat-label>Input</mat-label>
                 <input
                     matInput
                     placeholder="Input"
+                    formControlName="inputControl"
+                    required
                     type="text"
                 />
                 <!-- error state goes here -->
+                <mat-icon
+                    *ngIf="basicForm?.controls?.inputControl.touched"
+                    matSuffix
+                    [ngClass]="basicForm?.controls?.inputControl.errors ? 'failure-red' : 'success'">
+                    {{ basicForm?.controls?.inputControl.errors ? 'clear' : 'done' }}</mat-icon>
+                <mat-error data-cy="input-error-text" *ngIf="basicForm.get('inputControl').hasError('required')"
+                    >required</mat-error>
+                <mat-hint>This is a regular input field.</mat-hint>
             </mat-form-field>
 
             <mat-form-field>
