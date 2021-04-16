@@ -12,24 +12,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PasswordStrengthComponent } from './password-strength.component';
 
 @NgModule({
-  declarations: [
-    FormValidationComponent,
-    PasswordStrengthComponent
-  ],
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserModule,
-    BrowserAnimationsModule
-  ],
-  exports: [
-    FormValidationComponent
-  ]
+    declarations: [FormValidationComponent, PasswordStrengthComponent],
+    imports: [
+        CommonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatInputModule,
+        MatFormFieldModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+    ],
+    exports: [FormValidationComponent],
 })
-export class FormValidationModule { }
+export class FormValidationModule {}

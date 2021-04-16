@@ -11,7 +11,7 @@ import { BasicBottomSheetComponent } from './pages/overlays/basic-bottom-sheet/b
 import { ComplexBottomSheetComponent } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.component';
 import { LoadingStatesComponent } from './pages/loading-states/loading-states.component';
 import { CollapsibleAppBarComponent } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.component';
-import { FormValidationComponent} from './pages/form-validation/form-validation.component';
+import { FormValidationComponent } from './pages/form-validation/form-validation.component';
 
 export type DrawerItem = {
     title: string;

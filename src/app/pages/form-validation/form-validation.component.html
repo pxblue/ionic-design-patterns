@@ -8,44 +8,35 @@
 <section class="mat-typography" [class.small]="isCollapsed">
     <div class="example-container">
         <h2>Basic Form Fields</h2>
-        <p class="form-description" >
+        <p class="form-description">
             The following examples show how to perform validation on various input types. The error icon on invalid
             inputs is optional, but adds redundancy for color blind users.
         </p>
         <form [formGroup]="basicForm">
             <mat-form-field appearance="fill">
                 <mat-label>Input</mat-label>
-                <input
-                    matInput
-                    placeholder="Input"
-                    formControlName="inputControl"
-                    required
-                    type="text"
-                />
+                <input matInput placeholder="Input" formControlName="inputControl" required type="text" />
                 <!-- error state goes here -->
                 <mat-icon
                     *ngIf="basicForm?.controls?.inputControl.touched"
                     matSuffix
                     [ngClass]="basicForm?.controls?.inputControl.errors ? 'failure-red' : 'success'"
-                    >
+                >
                     {{ basicForm?.controls?.inputControl.errors ? 'clear' : 'done' }}
                 </mat-icon>
-                <mat-error *ngIf="basicForm.get('inputControl').hasError('required')"
-                    >required</mat-error>
+                <mat-error *ngIf="basicForm.get('inputControl').hasError('required')">required</mat-error>
                 <mat-hint>This is a regular input field.</mat-hint>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Enter your email</mat-label>
-                <input 
-                    matInput placeholder="Enter your email" 
-                    formControlName="email" 
-                    required />
+                <input matInput placeholder="Enter your email" formControlName="email" required />
                 <!-- error state goes here -->
                 <mat-icon
                     *ngIf="basicForm?.controls?.email.touched"
                     matSuffix
-                    [ngClass]="basicForm?.controls?.email.errors ? 'failure-red' : 'success'">
+                    [ngClass]="basicForm?.controls?.email.errors ? 'failure-red' : 'success'"
+                >
                     {{ basicForm?.controls?.email.errors ? 'clear' : 'done' }}
                 </mat-icon>
                 <mat-error *ngIf="basicForm.get('email').hasError('pattern')">Invalid email address</mat-error>
@@ -69,7 +60,8 @@
                     matSuffix
                     [ngClass]="basicForm?.controls?.phoneNumControl.errors ? 'failure-red' : 'success'"
                 >
-                    {{ basicForm?.controls?.phoneNumber.errors ? 'clear' : 'done' }}</mat-icon>
+                    {{ basicForm?.controls?.phoneNumber.errors ? 'clear' : 'done' }}</mat-icon
+                >
                 <mat-error *ngIf="basicForm.get('phoneNumControl').hasError('pattern')">Invalid phone number</mat-error>
                 <mat-error *ngIf="basicForm.get('phoneNumControl').hasError('required')">required</mat-error>
                 <mat-hint>
@@ -107,7 +99,7 @@
                     placeholder="Old Password"
                     required
                     formControlName="oldPasswordControl"
-                    [type]="oldPasswordVisibility ? 'text' : 'password' "
+                    [type]="oldPasswordVisibility ? 'text' : 'password'"
                 />
                 <!-- Toggle visibility -->
                 <button mat-icon-button matSuffix (click)="toggleOldPasswordVisibility()">
@@ -122,7 +114,7 @@
                         placeholder="New Password"
                         required
                         formControlName="newPassword"
-                        [type]="newPasswordVisibility ? 'text' : 'password' "
+                        [type]="newPasswordVisibility ? 'text' : 'password'"
                         (keyup)="passwordStrength($event.target.value)"
                     />
                     <!-- Toggle visibility -->
@@ -144,7 +136,8 @@
                     </app-password-strength>
                     <app-password-strength
                         [success]="specialFlag"
-                        validationMessage="At least 1 special character (Valid: ! @ # $ ^ &)">
+                        validationMessage="At least 1 special character (Valid: ! @ # $ ^ &)"
+                    >
                     </app-password-strength>
                 </mat-list>
                 <mat-form-field appearance="fill">
@@ -154,7 +147,7 @@
                         placeholder="Confirm Password"
                         required
                         formControlName="confirmPasswordControl"
-                        [type]="confirmPasswordVisibility ? 'text' : 'password' "
+                        [type]="confirmPasswordVisibility ? 'text' : 'password'"
                         [errorState]="errorMatcher"
                     />
                     <!-- Toggle visibility or don't Toggle ? -->
