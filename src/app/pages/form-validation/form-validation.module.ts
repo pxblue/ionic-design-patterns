@@ -9,10 +9,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PasswordStrengthComponent } from './password-strength.component';
 
 @NgModule({
   declarations: [
-    FormValidationComponent],
+    FormValidationComponent,
+    PasswordStrengthComponent
+  ],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -26,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule
   ],
   exports: [
-    FormValidationComponent]
+    FormValidationComponent
+  ]
 })
 export class FormValidationModule { }

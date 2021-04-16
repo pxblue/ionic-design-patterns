@@ -15,11 +15,21 @@ class CrossFieldErrorMatcher implements ErrorStateMatcher {
   templateUrl: './form-validation.component.html',
   styleUrls: ['./form-validation.component.scss'],
 })
+
 export class FormValidationComponent implements OnInit {
   isCollapsed: boolean;
   basicForm: FormGroup;
   errorMatcher = new CrossFieldErrorMatcher();
-
+  oldPasswordFG: FormGroup;
+  newPasswordFG: FormGroup;
+  passwordLength = false;
+  numberFlag = false;
+  specialFlag = false;
+  uppercaseFlag = false;
+  lowercaseFlag = false;
+  oldPasswordVisibility = false;
+  newPasswordVisibility = false;
+  confirmPasswordVisibility = false;
 
   constructor(
     private readonly _drawerService: StateService,
@@ -64,5 +74,43 @@ export class FormValidationComponent implements OnInit {
         ]),
       ],
     });
+    this.oldPasswordFG = this._formBuilder.group({
+      oldPassword: ['', Validators.required],
+    });
+    this.newPasswordFG = this._formBuilder.group(
+      {
+          newPassword: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
+          confirmPassword: ['', Validators.required],
+      },
+      {
+          validator: this.checkPasswords,
+      }
+    );
+  }
+
+  checkPasswords(group: FormGroup): any {
+    const pass = group.get('newPassword').value;
+    const confirmPass = group.get('confirmPassword').value;
+    return pass === confirmPass ? null : { passwordsDoNotMatch: true };
+  }
+
+  checkPasswordStrength(password: string): void {
+    this.passwordLength = password.length > 7;
+    this.specialFlag = /[!@#$^&]/.test(password);
+    this.numberFlag = /[0-9]/.test(password);
+    this.uppercaseFlag = /[A-Z]/.test(password);
+    this.lowercaseFlag = /[a-z]/.test(password);
+  }
+
+  toggleOldPasswordVisibility(): void {
+    this.oldPasswordVisibility = !this.oldPasswordVisibility;
+  }
+
+  toggleNewPasswordVisibility(): void {
+    this.newPasswordVisibility = !this.newPasswordVisibility;
+  }
+
+  toggleConfirmPasswordVisibility(): void {
+    this.confirmPasswordVisibility = !this.confirmPasswordVisibility;
   }
 }
