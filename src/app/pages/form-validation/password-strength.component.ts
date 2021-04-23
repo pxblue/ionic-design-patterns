@@ -13,7 +13,7 @@ import * as Colors from '@pxblue/colors';
     `,
     styles: [
         `
-            ::ng-deep .mat-list-base .app-password-strength-check.mat-list-item .mat-list-item-content {
+            ::ng-deep .mat-list-base .app-password-strength.mat-list-item .mat-list-item-content {
                 padding: 0;
             }
         `,

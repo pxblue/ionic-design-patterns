@@ -74,12 +74,12 @@ export class FormValidationComponent implements OnInit {
             ],
         });
         this.oldPasswordFG = this._formBuilder.group({
-            oldPassword: ['', Validators.required],
+            oldPasswordControl: ['', Validators.required],
         });
         this.newPasswordFG = this._formBuilder.group(
             {
-                newPassword: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
-                confirmPassword: ['', Validators.required],
+                newPasswordControl: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
+                confirmPasswordControl: ['', Validators.required],
             },
             {
                 validator: this.checkPasswords,
@@ -88,8 +88,8 @@ export class FormValidationComponent implements OnInit {
     }
 
     checkPasswords(group: FormGroup): any {
-        const pass = group.get('newPassword').value;
-        const confirmPass = group.get('confirmPassword').value;
+        const pass = group.get('newPasswordControl').value;
+        const confirmPass = group.get('confirmPasswordControl').value;
         return pass === confirmPass ? null : { passwordsDoNotMatch: true };
     }
 
