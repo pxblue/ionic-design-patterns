@@ -1,5 +1,5 @@
-<mat-toolbar color="primary" class="app-bar mat-elevation-z2">
-    <button *ngIf="isCollapsed" mat-icon-button (click)="toggleMenu()">
+<mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="pxb-toolbar">
+    <button *ngIf="isCollapsed" mat-icon-button (click)="toggleMenu()" data-cy="toolbar-menu">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isCollapsed ? 24 : 0">Form Validation</div>
@@ -15,7 +15,14 @@
         <form [formGroup]="basicForm">
             <mat-form-field appearance="fill">
                 <mat-label>Input</mat-label>
-                <input matInput placeholder="Input" formControlName="inputControl" required type="text" />
+                <input
+                    matInput
+                    placeholder="Input"
+                    formControlName="inputControl"
+                    required
+                    type="text"
+                    data-cy="basic-input"
+                />
                 <!-- error state goes here -->
                 <mat-icon
                     *ngIf="basicForm?.controls?.inputControl.touched"
@@ -24,13 +31,15 @@
                 >
                     {{ basicForm?.controls?.inputControl.errors ? 'clear' : 'done' }}
                 </mat-icon>
-                <mat-error *ngIf="basicForm.get('inputControl').hasError('required')">required</mat-error>
+                <mat-error *ngIf="basicForm.get('inputControl').hasError('required')" data-cy="input-error-text"
+                    >required</mat-error
+                >
                 <mat-hint>This is a regular input field.</mat-hint>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Enter your email</mat-label>
-                <input matInput placeholder="Enter your email" formControlName="email" required />
+                <input matInput placeholder="Enter your email" formControlName="email" required data-cy="basic-email" />
                 <!-- error state goes here -->
                 <mat-icon
                     *ngIf="basicForm?.controls?.email.touched"
@@ -40,7 +49,9 @@
                     {{ basicForm?.controls?.email.errors ? 'clear' : 'done' }}
                 </mat-icon>
                 <mat-error *ngIf="basicForm.get('email').hasError('pattern')">Invalid email address</mat-error>
-                <mat-error *ngIf="basicForm.get('email').hasError('required')">required</mat-error>
+                <mat-error *ngIf="basicForm.get('email').hasError('required')" data-cy="email-error-text"
+                    >required</mat-error
+                >
                 <mat-hint>This field throws an error if the email format is incorrect.</mat-hint>
             </mat-form-field>
 
@@ -53,6 +64,7 @@
                     formControlName="phoneNumControl"
                     (keypress)="numberOnly($event)"
                     required
+                    data-cy="basic-phone"
                 />
                 <!-- error state goes here -->
                 <mat-icon
@@ -63,7 +75,11 @@
                     {{ basicForm?.controls?.phoneNumber.errors ? 'clear' : 'done' }}</mat-icon
                 >
                 <mat-error *ngIf="basicForm.get('phoneNumControl').hasError('pattern')">Invalid phone number</mat-error>
-                <mat-error *ngIf="basicForm.get('phoneNumControl').hasError('required')">required</mat-error>
+                <mat-error
+                    *ngIf="basicForm.get('phoneNumControl').hasError('required')"
+                    data-cy="phone-number-error-text"
+                    >required</mat-error
+                >
                 <mat-hint>
                     This field throws an error if the phone number format is incorrect. (Needs to be a valid U.S.
                     number)
@@ -80,9 +96,9 @@
         </p>
         <mat-form-field hintLabel="Max 30 characters" apperance="fill">
             <mat-label>Enter Some Text</mat-label>
-            <input matInput $input maxlength="30" placeholder="Enter some text" />
+            <input matInput $input maxlength="30" placeholder="Enter some text" data-cy="char-input" />
             <!-- error state goes here -->
-            <mat-hint align="end">{{ input.value?.length || 0 }}/30</mat-hint>
+            <mat-hint align="end" data-cy="char-count">{{ input.value?.length || 0 }}/30</mat-hint>
         </mat-form-field>
     </div>
     <div class="example-container">
@@ -100,6 +116,7 @@
                     required
                     formControlName="oldPasswordControl"
                     [type]="oldPasswordVisibility ? 'text' : 'password'"
+                    data-cy="old-password"
                 />
                 <!-- Toggle visibility -->
                 <button mat-icon-button matSuffix (click)="toggleOldPasswordVisibility()">
@@ -113,9 +130,10 @@
                         matInput
                         placeholder="New Password"
                         required
-                        formControlName="newPassword"
+                        formControlName="newPasswordControl"
                         [type]="newPasswordVisibility ? 'text' : 'password'"
                         (keyup)="passwordStrength($event.target.value)"
+                        data-cy="new-password"
                     />
                     <!-- Toggle visibility -->
                     <button mat-icon-button matSuffix (click)="toggleNewPasswordVisibility()">
@@ -149,6 +167,7 @@
                         formControlName="confirmPasswordControl"
                         [type]="confirmPasswordVisibility ? 'text' : 'password'"
                         [errorState]="errorMatcher"
+                        data-cy="confirm-password"
                     />
                     <!-- Toggle visibility or don't Toggle ? -->
                     <button mat-icon-button matSuffix (click)="toggleConfirmPasswordVisibility()">
