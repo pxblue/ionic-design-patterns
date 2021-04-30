@@ -34,7 +34,9 @@ export class FormValidationComponent implements OnInit {
         private readonly _drawerService: StateService,
         private readonly _breakpointObserver: BreakpointObserver,
         private readonly _formBuilder: FormBuilder
-    ) {}
+    ) {
+        this.initForm();
+    }
 
     ngOnInit(): void {
         this._breakpointObserver
@@ -85,6 +87,15 @@ export class FormValidationComponent implements OnInit {
                 validator: this.checkPasswords,
             }
         );
+    }
+
+    //this accepts only number in phone number input field
+    numbersOnly(event: KeyboardEvent): boolean {
+        const charCode = event.which ? event.which : event.keyCode;
+        if (charCode > 31 && (charCode < 40 || charCode > 57)) {
+            return false;
+        }
+        return true;
     }
 
     checkPasswords(group: FormGroup): any {
