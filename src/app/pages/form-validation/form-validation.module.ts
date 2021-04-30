@@ -4,6 +4,7 @@ import { FormValidationComponent } from './form-validation.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,6 +19,7 @@ import { PasswordStrengthComponent } from './password-strength.component';
         MatToolbarModule,
         MatIconModule,
         MatButtonModule,
+        MatListModule,
         MatInputModule,
         MatFormFieldModule,
         FormsModule,
