@@ -96,7 +96,7 @@
         </p>
         <mat-form-field hintLabel="Max 30 characters" apperance="fill">
             <mat-label>Enter Some Text</mat-label>
-            <input matInput $input maxlength="30" placeholder="Enter some text" data-cy="char-input" />
+            <input matInput maxlength="30" placeholder="Enter some text" data-cy="char-input" />
             <!-- error state goes here -->
             <mat-hint align="end" data-cy="char-count">{{ input.value?.length || 0 }}/30</mat-hint>
         </mat-form-field>
