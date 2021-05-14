@@ -31,7 +31,12 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
+            "styles": [
+              "src/styles.scss",
+              "./node_modules/@pxblue/angular-themes/open-sans.scss",
+              "./node_modules/@pxblue/angular-themes/theme.scss",
+              "./node_modules/placeholder-loading/src/scss/placeholder-loading.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -90,7 +95,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "styles": [],
+            "styles": [
+              "src/styles.scss",
+              "./node_modules/@pxblue/angular-themes/open-sans.scss",
+              "./node_modules/@pxblue/angular-themes/theme.scss"
+            ],
             "scripts": [],
             "assets": [
               {
