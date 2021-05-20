@@ -22,7 +22,7 @@ This repository holds the source code examples for [PX Blue design patterns](htt
 ## Running Locally
 
 ```
-git clone https://github.com/pxblue/ionic-desing-patterns
+git clone https://github.com/pxblue/ionic-design-patterns
 cd ionic-design-patterns
 yarn && ionic serve
 ```
