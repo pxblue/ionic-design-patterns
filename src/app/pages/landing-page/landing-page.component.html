@@ -1,11 +1,11 @@
 <mat-toolbar color="primary" class="app-bar mat-elevation-z2">
-    <button style="margin-left: -8px;" mat-icon-button (click)="stateService.setDrawerOpen(true)">
+    <button style="margin-left: -8px" mat-icon-button (click)="stateService.setDrawerOpen(true)">
         <mat-icon>menu</mat-icon>
     </button>
-    <div class="mat-title" style="margin-left: 24px;">PX Blue Design Patterns</div>
+    <div class="mat-title" style="margin-left: 24px">PX Blue Design Patterns</div>
 </mat-toolbar>
-<div style="padding: 10vh 24px 40px; max-width: 600px; margin: 0 auto;">
-    <h2 class="mat-display-3" style="margin-bottom: 24px;" [@headerFadeInAnimation]>
+<div style="padding: 10vh 24px 40px; max-width: 600px; margin: 0 auto">
+    <h2 class="mat-display-3" style="margin-bottom: 24px" [@headerFadeInAnimation]>
         The <span [style.color]="Colors.blue[500]">Patterns</span>.
     </h2>
     <div [@bodyFadeInAnimation]>
@@ -21,13 +21,13 @@
             <strong>Ionic developers</strong> to provide examples of how to implement these patterns in their own
             applications.
         </p>
-        <button mat-stroked-button color="primary" style="margin-top: 24px;" (click)="stateService.setDrawerOpen(true)">
+        <button mat-stroked-button color="primary" style="margin-top: 24px" (click)="stateService.setDrawerOpen(true)">
             Explore PX Blue Design Patterns
         </button>
     </div>
-    <hr style="margin: 40px -16px 32px;" [@linksFadeInAnimation] />
+    <hr style="margin: 40px -16px 32px" [@linksFadeInAnimation] />
     <div fxLayout="column" fxLayoutGap="8px" [@linksFadeInAnimation]>
-        <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="16px" style="justify-content: space-between;">
+        <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="16px" style="justify-content: space-between">
             <a
                 mat-button
                 target="_blank"

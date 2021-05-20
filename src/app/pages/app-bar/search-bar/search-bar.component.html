@@ -6,18 +6,18 @@
         [class.hidden]="toggleSearch"
     >
         <mat-toolbar-row>
-            <button data-cy="toolbar-menu" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px;">
+            <button data-cy="toolbar-menu" mat-icon-button (click)="toggleMenu()" style="margin-left: -8px">
                 <mat-icon>menu</mat-icon>
             </button>
-            <div class="mat-title" style="padding-left: 24px;">Search Bar</div>
+            <div class="mat-title" style="padding-left: 24px">Search Bar</div>
             <pxb-spacer></pxb-spacer>
-            <button data-cy="search-btn" mat-icon-button (click)="openSearch()" style="margin-right: -8px;">
+            <button data-cy="search-btn" mat-icon-button (click)="openSearch()" style="margin-right: -8px">
                 <mat-icon>search</mat-icon>
             </button>
         </mat-toolbar-row>
     </mat-toolbar>
     <mat-toolbar class="search-header" [class.active]="toggleSearch">
-        <mat-toolbar-row style="padding: 0 5px;">
+        <mat-toolbar-row style="padding: 0 5px">
             <button class="search-icon" mat-icon-button disabled>
                 <mat-icon>search</mat-icon>
             </button>
@@ -29,7 +29,7 @@
                 #searchBar
                 data-cy="searchfield"
             />
-            <button mat-icon-button (click)="searchClose()" style="margin-right: 8px;" data-cy="search-close-btn">
+            <button mat-icon-button (click)="searchClose()" style="margin-right: 8px" data-cy="search-close-btn">
                 <mat-icon [style.color]="Colors.black[500]">close</mat-icon>
             </button>
         </mat-toolbar-row>
