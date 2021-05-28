@@ -66,7 +66,7 @@ export class FormValidationComponent implements OnInit {
                     Validators.pattern(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i),
                 ]),
             ],
-            phoneNumber: [
+            phoneNumControl: [
                 '',
                 Validators.compose([
                     Validators.required,

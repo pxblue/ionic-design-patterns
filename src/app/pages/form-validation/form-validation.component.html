@@ -62,7 +62,7 @@
                     placeholder="Phone Number"
                     maxlength="22"
                     formControlName="phoneNumControl"
-                    (keypress)="numberOnly($event)"
+                    (keypress)="numbersOnly($event)"
                     required
                     data-cy="basic-phone"
                 />
@@ -72,7 +72,7 @@
                     matSuffix
                     [ngClass]="basicForm?.controls?.phoneNumControl.errors ? 'failure-red' : 'success'"
                 >
-                    {{ basicForm?.controls?.phoneNumber.errors ? 'clear' : 'done' }}</mat-icon
+                    {{ basicForm?.controls?.phoneNumControl.errors ? 'clear' : 'done' }}</mat-icon
                 >
                 <mat-error *ngIf="basicForm.get('phoneNumControl').hasError('pattern')">Invalid phone number</mat-error>
                 <mat-error
@@ -132,7 +132,7 @@
                         required
                         formControlName="newPasswordControl"
                         [type]="newPasswordVisibility ? 'text' : 'password'"
-                        (keyup)="passwordStrength($event.target.value)"
+                        (keyup)="checkPasswordStrength($event.target.value)"
                         data-cy="new-password"
                     />
                     <!-- Toggle visibility -->
