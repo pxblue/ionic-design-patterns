@@ -38,7 +38,7 @@ jobs:
                     yarn build
             # Save the coverage folder for codecov report upload.
             - persist_to_workspace:
-              	root: .
+                root: .
                 paths:
                     - coverage
     coverage_report:
