@@ -33,14 +33,14 @@ jobs:
                 command: |
                     yarn test --no-watch --code-coverage
             - run:
-				name: Build Project
+                name: Build Project
                 command: |
                     yarn build
             # Save the coverage folder for codecov report upload.
             - persist_to_workspace:
               	root: .
-              	paths:
-                	- coverage
+                paths:
+                    - coverage
     coverage_report:
         working_directory: ~/ionic-design-patterns
         docker:
@@ -50,8 +50,8 @@ jobs:
             - attach_workspace:
                 at: .
             - codecov/upload:
-              	file: './coverage/lcov.info'
-              	token: 5ac9f1bc-a0e5-4423-aa0c-83614dae4b9d
+                file: './coverage/lcov.info'
+                token: 5ac9f1bc-a0e5-4423-aa0c-83614dae4b9d
 
 workflows:
     version: 2
