@@ -1,8 +1,8 @@
 version: 2.1
 orbs:
-  codecov: codecov/codecov@1.2.3
+  codecov: codecov/codecov@1.1.3
 jobs:
-  build:
+  build_project:
     working_directory: ~/ionic-design-patterns
     docker:
       - image: circleci/node:14.0.0-browsers
@@ -33,15 +33,15 @@ jobs:
           command: |
             yarn test --no-watch --code-coverage
       - run:
-          name: Build
+          name: Build Project
           command: |
             yarn build
       # Save the coverage folder for codecov report upload.
       - persist_to_workspace:
         root: .
         paths:
-            - coverage
-            
+          - coverage
+
   coverage_report:
     working_directory: ~/ionic-design-patterns
     docker:
@@ -58,10 +58,10 @@ workflows:
   version: 2
   ionic_design_patterns:
     jobs:
-      - build
+      - build_project
       - coverage_report:
         requires:
-          - build
+          - build_project
         # filters:
         #   branches:
         #     only:
