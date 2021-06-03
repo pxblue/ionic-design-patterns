@@ -59,9 +59,9 @@ workflows:
         jobs:
             - build_project
             - coverage_report:
-              	requires:
-                	- build_project
-              	filters:
+                requires:
+                    - build_project
+                filters:
                 	branches:
                   		only:
                     		- master
