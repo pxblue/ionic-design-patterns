@@ -53,14 +53,14 @@ jobs:
         file: './coverage/lcov.info'
         token: 5ac9f1bc-a0e5-4423-aa0c-83614dae4b9d
 
-workflows:
-  version: 2
-  ionic_design_patterns:
-    jobs:
-      - build_project
-      - coverage_report:
-        requires:
-          - build_project
+# workflows:
+#   version: 2
+#   ionic_design_patterns:
+#     jobs:
+#       - build_project
+#       - coverage_report:
+#         requires:
+#           - build_project
         # filters:
         #   branches:
         #     only:
