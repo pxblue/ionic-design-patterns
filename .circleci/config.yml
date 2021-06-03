@@ -41,17 +41,17 @@ jobs:
         root: .
         paths:
             - coverage
-  coverage_report:
-    working_directory: ~/ionic-design-patterns
-    docker:
-      - image: circleci/node:14.0.0-browsers
-    steps:
-      - checkout
-      - attach_workspace:
-           at: .
-      - codecov/upload:
-        file: './coverage/lcov.info'
-        token: 5ac9f1bc-a0e5-4423-aa0c-83614dae4b9d
+  # coverage_report:
+  #   working_directory: ~/ionic-design-patterns
+  #   docker:
+  #     - image: circleci/node:14.0.0-browsers
+  #   steps:
+  #     - checkout
+  #     - attach_workspace:
+  #          at: .
+  #     - codecov/upload:
+  #       file: './coverage/lcov.info'
+  #       token: 5ac9f1bc-a0e5-4423-aa0c-83614dae4b9d
 
 # workflows:
 #   version: 2
