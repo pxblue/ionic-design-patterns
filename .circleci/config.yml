@@ -1,6 +1,6 @@
 version: 2.1
-orbs:
-  codecov: codecov/codecov@1.2.3
+# orbs:
+#   codecov: codecov/codecov@1.2.3
 jobs:
   build_project:
     working_directory: ~/ionic-design-patterns
