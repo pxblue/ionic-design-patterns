@@ -62,6 +62,6 @@ workflows:
                 requires:
                     - build_project
                 filters:
-                	branches:
-                  		only:
-                    		- master
+                  branches:
+                      only:
+                        - master
