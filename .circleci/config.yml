@@ -41,7 +41,6 @@ jobs:
               root: .
               paths:
                   - coverage
-
     coverage_report:
         working_directory: ~/ionic-design-patterns
         docker:
