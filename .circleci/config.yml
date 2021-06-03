@@ -33,7 +33,7 @@ jobs:
                 command: |
                     yarn test --no-watch --code-coverage
             - run:
-            	name: Build Project
+				name: Build Project
                 command: |
                     yarn build
             # Save the coverage folder for codecov report upload.
