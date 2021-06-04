@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" class="app-bar mat-elevation-z2" data-cy="pxb-toolbar">
-    <button *ngIf="isCollapsed" mat-icon-button (click)="toggleMenu()" data-cy="toolbar-menu">
+    <button mat-icon-button (click)="toggleMenu()" data-cy="toolbar-menu">
         <mat-icon>menu</mat-icon>
     </button>
     <div class="mat-title" [style.marginLeft.px]="isCollapsed ? 24 : 0">Form Validation</div>
