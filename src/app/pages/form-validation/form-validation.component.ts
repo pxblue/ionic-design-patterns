@@ -16,7 +16,7 @@ class CrossFieldErrorMatcher implements ErrorStateMatcher {
     styleUrls: ['./form-validation.component.scss'],
 })
 export class FormValidationComponent implements OnInit {
-    isCollapsed: boolean;
+    isSmall: boolean;
     basicForm: FormGroup;
     errorMatcher = new CrossFieldErrorMatcher();
     oldPasswordFG: FormGroup;
@@ -43,9 +43,9 @@ export class FormValidationComponent implements OnInit {
             .observe([Breakpoints.Small, Breakpoints.Handset])
             .subscribe((state: BreakpointState) => {
                 if (state.matches) {
-                    this.isCollapsed = true;
+                    this.isSmall = true;
                 } else {
-                    this.isCollapsed = false;
+                    this.isSmall = false;
                 }
             });
     }
