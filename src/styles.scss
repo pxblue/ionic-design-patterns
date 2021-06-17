@@ -1,3 +1,5 @@
+@import '~@pxblue/colors/palette.scss';
+
 * {
     margin: 0;
     padding: 0;
@@ -15,4 +17,8 @@ mat-toolbar {
     padding-top: env(safe-area-inset-top) !important; //for iOS 11.1
     height: calc(constant(safe-area-inset-top) + 56px) !important;
     height: calc(env(safe-area-inset-top) + 56px) !important;
+}
+
+.pxb-drawer-layout-nav-content {
+    background-color: map-get($pxb-white, 50);
 }
