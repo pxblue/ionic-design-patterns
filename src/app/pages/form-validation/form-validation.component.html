@@ -1,0 +1,181 @@
+<mat-toolbar color="primary" class="app-bar mat-elevation-z4" data-cy="pxb-toolbar">
+    <button mat-icon-button style="margin-left: -8px" (click)="toggleMenu()" data-cy="toolbar-menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <div class="mat-title" style="margin-left: 24px">Form Validation</div>
+</mat-toolbar>
+
+<section class="mat-typography" [class.small]="isSmall">
+    <div class="example-container">
+        <h2>Basic Form Fields</h2>
+        <p class="form-description">
+            The following examples show how to perform validation on various input types. The error icon on invalid
+            inputs is optional, but adds redundancy for color blind users.
+        </p>
+        <form [formGroup]="basicForm">
+            <mat-form-field appearance="fill">
+                <mat-label>Input</mat-label>
+                <input
+                    matInput
+                    placeholder="Input"
+                    formControlName="inputControl"
+                    required
+                    type="text"
+                    data-cy="basic-input"
+                />
+                <!-- error state goes here -->
+                <mat-icon
+                    *ngIf="basicForm?.controls?.inputControl.touched"
+                    matSuffix
+                    [ngClass]="basicForm?.controls?.inputControl.errors ? 'failure-red' : 'success'"
+                >
+                    {{ basicForm?.controls?.inputControl.errors ? 'clear' : 'done' }}
+                </mat-icon>
+                <mat-error *ngIf="basicForm.get('inputControl').hasError('required')" data-cy="input-error-text"
+                    >required</mat-error
+                >
+                <mat-hint>This is a regular input field.</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="Enter your email" formControlName="email" required data-cy="basic-email" />
+                <!-- error state goes here -->
+                <mat-icon
+                    *ngIf="basicForm?.controls?.email.touched"
+                    matSuffix
+                    [ngClass]="basicForm?.controls?.email.errors ? 'failure-red' : 'success'"
+                >
+                    {{ basicForm?.controls?.email.errors ? 'clear' : 'done' }}
+                </mat-icon>
+                <mat-error *ngIf="basicForm.get('email').hasError('pattern')">Invalid email address</mat-error>
+                <mat-error *ngIf="basicForm.get('email').hasError('required')" data-cy="email-error-text"
+                    >required</mat-error
+                >
+                <mat-hint>This field throws an error if the email format is incorrect.</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Phone number</mat-label>
+                <input
+                    matInput
+                    placeholder="Phone Number"
+                    maxlength="22"
+                    formControlName="phoneNumControl"
+                    (keypress)="numbersOnly($event)"
+                    required
+                    data-cy="basic-phone"
+                />
+                <!-- error state goes here -->
+                <mat-icon
+                    *ngIf="basicForm?.controls?.phoneNumControl.touched"
+                    matSuffix
+                    [ngClass]="basicForm?.controls?.phoneNumControl.errors ? 'failure-red' : 'success'"
+                >
+                    {{ basicForm?.controls?.phoneNumControl.errors ? 'clear' : 'done' }}</mat-icon
+                >
+                <mat-error *ngIf="basicForm.get('phoneNumControl').hasError('pattern')">Invalid phone number</mat-error>
+                <mat-error
+                    *ngIf="basicForm.get('phoneNumControl').hasError('required')"
+                    data-cy="phone-number-error-text"
+                    >required</mat-error
+                >
+                <mat-hint>
+                    This field throws an error if the phone number format is incorrect. (Needs to be a valid U.S.
+                    number)
+                </mat-hint>
+            </mat-form-field>
+        </form>
+    </div>
+
+    <div class="example-container">
+        <h2>Character Limits</h2>
+        <p class="form-description">
+            The following example shows how to restrict the length of an input field. In these cases, you should provide
+            the user an indication of how many characters are available.
+        </p>
+        <mat-form-field hintLabel="Max 30 characters" apperance="fill">
+            <mat-label>Enter Some Text</mat-label>
+            <input matInput #input maxlength="30" placeholder="Enter some text" data-cy="char-input" />
+            <!-- error state goes here -->
+            <mat-hint align="end" data-cy="char-count">{{ input?.value?.length || 0 }}/30</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="example-container">
+        <h2>Password Validation</h2>
+        <p class="form-description">
+            The following example shows how to enforce password strength restrictions and confirmation field matching.
+            The password strength requirements for your application may differ from this example.
+        </p>
+        <form [formGroup]="oldPasswordFG">
+            <mat-form-field appearance="fill">
+                <mat-label>Old Password</mat-label>
+                <input
+                    matInput
+                    placeholder="Old Password"
+                    required
+                    formControlName="oldPasswordControl"
+                    [type]="oldPasswordVisibility ? 'text' : 'password'"
+                    data-cy="old-password"
+                />
+                <!-- Toggle visibility -->
+                <button mat-icon-button matSuffix (click)="toggleOldPasswordVisibility()">
+                    <mat-icon>{{ oldPasswordVisibility ? 'visibility' : 'visibility_off' }}</mat-icon>
+                </button>
+            </mat-form-field>
+            <div [formGroup]="newPasswordFG">
+                <mat-form-field appearance="fill" style="margin-bottom: 24px">
+                    <mat-label>New Password</mat-label>
+                    <input
+                        matInput
+                        placeholder="New Password"
+                        formControlName="newPasswordControl"
+                        [type]="newPasswordVisibility ? 'text' : 'password'"
+                        (keyup)="checkPasswordStrength($event.target.value)"
+                        data-cy="new-password"
+                    />
+                    <!-- Toggle visibility -->
+                    <button mat-icon-button matSuffix (click)="toggleNewPasswordVisibility()">
+                        <mat-icon>{{ newPasswordVisibility ? 'visibility' : 'visibility_off' }}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <mat-list class="validation-list">
+                    <!-- list of required Password parameters with responsive icons -->
+                    <app-password-strength
+                        [success]="passwordLength"
+                        validationMessage="At least 8 characters in length"
+                    ></app-password-strength>
+                    <app-password-strength [success]="numberFlag" validationMessage="At least 1 digit">
+                    </app-password-strength>
+                    <app-password-strength [success]="uppercaseFlag" validationMessage="At least 1 uppercase letter">
+                    </app-password-strength>
+                    <app-password-strength [success]="lowercaseFlag" validationMessage="At least 1 lowercase letter">
+                    </app-password-strength>
+                    <app-password-strength
+                        [success]="specialFlag"
+                        validationMessage="At least 1 special character (Valid: ! @ # $ ^ &)"
+                    >
+                    </app-password-strength>
+                </mat-list>
+                <mat-form-field appearance="fill">
+                    <mat-label>Confirm Password</mat-label>
+                    <input
+                        matInput
+                        placeholder="Confirm Password"
+                        required
+                        formControlName="confirmPasswordControl"
+                        [type]="confirmPasswordVisibility ? 'text' : 'password'"
+                        [errorStateMatcher]="errorMatcher"
+                        data-cy="confirm-password"
+                    />
+                    <!-- Toggle visibility or don't Toggle ? -->
+                    <button mat-icon-button matSuffix (click)="toggleConfirmPasswordVisibility()">
+                        <mat-icon>{{ confirmPasswordVisibility ? 'visibility' : 'visibility_off' }}</mat-icon>
+                    </button>
+                    <!-- error state goes here -->
+                    <mat-error *ngIf="newPasswordFG.hasError('passwordsDoNotMatch')">Passwords do not match</mat-error>
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+</section>

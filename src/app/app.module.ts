@@ -31,6 +31,7 @@ import { BasicBottomSheetModule } from './pages/overlays/basic-bottom-sheet/basi
 import { ComplexBottomSheetModule } from './pages/overlays/complex-bottom-sheet/complex-bottom-sheet.module';
 import { LoadingStatesModule } from './pages/loading-states/loading-states.module';
 import { CollapsibleAppBarModule } from './pages/app-bar/collapsible-app-bar/collapsible-app-bar.module';
+import { FormValidationModule } from './pages/form-validation/form-validation.module';
 
 @NgModule({
     declarations: [AppComponent, PlaceholderComponent],
@@ -66,6 +67,7 @@ import { CollapsibleAppBarModule } from './pages/app-bar/collapsible-app-bar/col
         ComplexBottomSheetModule,
         LoadingStatesModule,
         CollapsibleAppBarModule,
+        FormValidationModule,
     ],
     providers: [StatusBar, SplashScreen],
     bootstrap: [AppComponent],
