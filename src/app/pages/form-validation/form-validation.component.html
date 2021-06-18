@@ -129,7 +129,6 @@
                     <input
                         matInput
                         placeholder="New Password"
-                        required
                         formControlName="newPasswordControl"
                         [type]="newPasswordVisibility ? 'text' : 'password'"
                         (keyup)="checkPasswordStrength($event.target.value)"

@@ -76,9 +76,9 @@ describe('FormValidationComponent', () => {
 
     it('should allow field with a valid new password', () => {
         component.newPasswordFG.controls.newPasswordControl.setValue('qwert12');
-        void expect(component.newPasswordFG.controls.newPasswordControl.valid).toBeFalsy();
+        void expect(component.newPasswordFG.controls.newPasswordControl.valid).toBeTruthy();
         component.newPasswordFG.controls.newPasswordControl.setValue('Qwert12');
-        void expect(component.newPasswordFG.controls.newPasswordControl.valid).toBeFalsy();
+        void expect(component.newPasswordFG.controls.newPasswordControl.valid).toBeTruthy();
         component.newPasswordFG.controls.newPasswordControl.setValue('12@Qwert');
         void expect(component.newPasswordFG.controls.newPasswordControl.valid).toBeTruthy();
     });

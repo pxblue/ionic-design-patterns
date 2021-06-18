@@ -80,7 +80,7 @@ export class FormValidationComponent implements OnInit {
         });
         this.newPasswordFG = this._formBuilder.group(
             {
-                newPasswordControl: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
+                newPasswordControl: [],
                 confirmPasswordControl: ['', Validators.required],
             },
             {
